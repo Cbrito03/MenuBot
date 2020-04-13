@@ -20,5 +20,9 @@
     "localStorage": "^1.0.4",
     "node-localstorage": "^2.1.5",
     "request": "^2.88.2"
+  },
+  "engines": {
+    "node": "10.19.0",
+    "npm": "6.13.4"
   }
 }
