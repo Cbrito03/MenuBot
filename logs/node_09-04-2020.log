@@ -1,0 +1,360 @@
+*********************************09-04-2020 11:42:10*********************************
+[FECHA] : 09-04-2020 - [HORA] : 11:42:10 - [conversationID] : 176423 - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'continue', queue: undefined },
+  messages: 
+   [ { type: 'text',
+       text: '¡Hola! $cr Soy tu asistente virtual 🤖 de Claro $cr Te puedo ayudar con las siguientes opciones: $cr Envía *cotizar* para conocer nuestros planes móviles y residenciales. 😎 $cr Envía *precio* para ver el catálogo de celulares prepago por marca. 📱 $cr Envía *asesor* si aún deseas ser atendido por uno de nuestros agentes de servicio al cliente o ventas. 👩💻👨💻 $cr Envía *recarga* para hacer una recarga. $cr Envía *paquete* para comprar un paquete. $cr Envía *pagar* para ver el saldo, fecha de vencimiento y pagar tu factura móvil y residencial. 💳 $cr Envía *factura* para conocer tus opciones en consulta de facturas. (Monto y fecha de vencimiento) 📥 $cr Envía *configuración* para conocer los pasos a seguir si tienes inconvenientes con tu navegación 📱. $cr Envía *soporte* si presentas inconvenientes con tu router de tu internet residencial. ☎📺🖥 $cr Envía *club* para conocer los establecimientos con promociones especiales solo por ser cliente Claro. 😎 💰 $cr ' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : 176423 	 [authToken] :  123456789	 [channel] : whatsapp
+ 
+*********************************09-04-2020 11:42:23*********************************
+[FECHA] : 09-04-2020 - [HORA] : 11:42:23 - [conversationID] : 176423 - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'continue', queue: undefined },
+  messages: 
+   [ { type: 'text',
+       text: '¡Hola! $cr Soy tu asistente virtual 🤖 de Claro $cr Te puedo ayudar con las siguientes opciones: $cr Envía *cotizar* para conocer nuestros planes móviles y residenciales. 😎 $cr Envía *precio* para ver el catálogo de celulares prepago por marca. 📱 $cr Envía *asesor* si aún deseas ser atendido por uno de nuestros agentes de servicio al cliente o ventas. 👩💻👨💻 $cr Envía *recarga* para hacer una recarga. $cr Envía *paquete* para comprar un paquete. $cr Envía *pagar* para ver el saldo, fecha de vencimiento y pagar tu factura móvil y residencial. 💳 $cr Envía *factura* para conocer tus opciones en consulta de facturas. (Monto y fecha de vencimiento) 📥 $cr Envía *configuración* para conocer los pasos a seguir si tienes inconvenientes con tu navegación 📱. $cr Envía *soporte* si presentas inconvenientes con tu router de tu internet residencial. ☎📺🖥 $cr Envía *club* para conocer los establecimientos con promociones especiales solo por ser cliente Claro. 😎 💰 $cr ' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : 176423 	 [authToken] :  123456789	 [channel] : whatsapp
+ 
+*********************************09-04-2020 11:42:36*********************************
+[FECHA] : 09-04-2020 - [HORA] : 11:42:36 - [conversationID] : 176423 - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'continue', queue: undefined },
+  messages: 
+   [ { type: 'text',
+       text: '¡Hola! $cr Soy tu asistente virtual 🤖 de Claro $cr Te puedo ayudar con las siguientes opciones: $cr Envía *cotizar* para conocer nuestros planes móviles y residenciales. 😎 $cr Envía *precio* para ver el catálogo de celulares prepago por marca. 📱 $cr Envía *asesor* si aún deseas ser atendido por uno de nuestros agentes de servicio al cliente o ventas. 👩💻👨💻 $cr Envía *recarga* para hacer una recarga. $cr Envía *paquete* para comprar un paquete. $cr Envía *pagar* para ver el saldo, fecha de vencimiento y pagar tu factura móvil y residencial. 💳 $cr Envía *factura* para conocer tus opciones en consulta de facturas. (Monto y fecha de vencimiento) 📥 $cr Envía *configuración* para conocer los pasos a seguir si tienes inconvenientes con tu navegación 📱. $cr Envía *soporte* si presentas inconvenientes con tu router de tu internet residencial. ☎📺🖥 $cr Envía *club* para conocer los establecimientos con promociones especiales solo por ser cliente Claro. 😎 💰 $cr ' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : 176423 	 [authToken] :  abcdefghi	 [channel] : whatsapp
+ 
+*********************************09-04-2020 11:42:53*********************************
+[FECHA] : 09-04-2020 - [HORA] : 11:42:53 - [conversationID] : 176423 - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'continue', queue: '' },
+  messages: 
+   [ { type: 'text',
+       text: 'Ingresa al siguiente link http://bit.ly/TelemarketingClaro y unos de nuestros asesores se comunicará contigo de inmediato para que puedas cotizar nuestros planes móviles y residenciales de acuerdo a tus necesidades. 🤓' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : 176423 	 [authToken] :  abcdefghi	 [channel] : whatsapp
+ 
+*********************************09-04-2020 11:43:05*********************************
+[FECHA] : 09-04-2020 - [HORA] : 11:43:05 - [conversationID] : 176423 - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'continue', queue: '' },
+  messages: 
+   [ { type: 'text',
+       text: '👋 Te damos la bienvenida a la GigaRed Claro, nuestro compromiso es mantenerte conectado.😊 $cr $cr Ingresa el número de la opción con la que necesitas apoyo: $cr $cr 1. Adquirir un plan nuevo, información de promociones o renovar mi servicio $cr 2. Gestiones y soporte de mis servicios actuales $cr ' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : 176423 	 [authToken] :  abcdefghi	 [channel] : whatsapp
+ 
+*********************************09-04-2020 11:43:13*********************************
+[FECHA] : 09-04-2020 - [HORA] : 11:43:13 - [conversationID] : 176423 - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'continue', queue: undefined },
+  messages: 
+   [ { type: 'text',
+       text: '¡Hola! $cr Soy tu asistente virtual 🤖 de Claro $cr Te puedo ayudar con las siguientes opciones: $cr Envía *cotizar* para conocer nuestros planes móviles y residenciales. 😎 $cr Envía *precio* para ver el catálogo de celulares prepago por marca. 📱 $cr Envía *asesor* si aún deseas ser atendido por uno de nuestros agentes de servicio al cliente o ventas. 👩💻👨💻 $cr Envía *recarga* para hacer una recarga. $cr Envía *paquete* para comprar un paquete. $cr Envía *pagar* para ver el saldo, fecha de vencimiento y pagar tu factura móvil y residencial. 💳 $cr Envía *factura* para conocer tus opciones en consulta de facturas. (Monto y fecha de vencimiento) 📥 $cr Envía *configuración* para conocer los pasos a seguir si tienes inconvenientes con tu navegación 📱. $cr Envía *soporte* si presentas inconvenientes con tu router de tu internet residencial. ☎📺🖥 $cr Envía *club* para conocer los establecimientos con promociones especiales solo por ser cliente Claro. 😎 💰 $cr ' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : 176423 	 [authToken] :  abcdefghi	 [channel] : whatsapp
+ 
+*********************************09-04-2020 11:44:13*********************************
+[FECHA] : 09-04-2020 - [HORA] : 11:44:13 - [conversationID] : 176423 - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'continue', queue: undefined },
+  messages: 
+   [ { type: 'text',
+       text: '¡Hola! $cr Soy tu asistente virtual 🤖 de Claro $cr Te puedo ayudar con las siguientes opciones: $cr Envía *cotizar* para conocer nuestros planes móviles y residenciales. 😎 $cr Envía *precio* para ver el catálogo de celulares prepago por marca. 📱 $cr Envía *asesor* si aún deseas ser atendido por uno de nuestros agentes de servicio al cliente o ventas. 👩💻👨💻 $cr Envía *recarga* para hacer una recarga. $cr Envía *paquete* para comprar un paquete. $cr Envía *pagar* para ver el saldo, fecha de vencimiento y pagar tu factura móvil y residencial. 💳 $cr Envía *factura* para conocer tus opciones en consulta de facturas. (Monto y fecha de vencimiento) 📥 $cr Envía *configuración* para conocer los pasos a seguir si tienes inconvenientes con tu navegación 📱. $cr Envía *soporte* si presentas inconvenientes con tu router de tu internet residencial. ☎📺🖥 $cr Envía *club* para conocer los establecimientos con promociones especiales solo por ser cliente Claro. 😎 💰 $cr ' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : 176423 	 [authToken] :  abcdefghi	 [channel] : whatsapp
+ 
+*********************************09-04-2020 11:44:25*********************************
+[FECHA] : 09-04-2020 - [HORA] : 11:44:25 - [conversationID] : 176423 - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'continue', queue: '' },
+  messages: 
+   [ { type: 'text',
+       text: 'Ingresa al siguiente link http://bit.ly/TelemarketingClaro y unos de nuestros asesores se comunicará contigo de inmediato para que puedas cotizar nuestros planes móviles y residenciales de acuerdo a tus necesidades. 🤓' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : 176423 	 [authToken] :  abcdefghi	 [channel] : whatsapp
+ 
+*********************************09-04-2020 11:44:52*********************************
+[FECHA] : 09-04-2020 - [HORA] : 11:44:52 - [conversationID] : 176423 - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'continue', queue: '' },
+  messages: 
+   [ { type: 'text',
+       text: '👋 Te damos la bienvenida a la GigaRed Claro, nuestro compromiso es mantenerte conectado.😊 $cr $cr Ingresa el número de la opción con la que necesitas apoyo: $cr $cr 1. Adquirir un plan nuevo, información de promociones o renovar mi servicio $cr 2. Gestiones y soporte de mis servicios actuales $cr ' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : 176423 	 [authToken] :  abcdefghi	 [channel] : whatsapp
+ 
+*********************************09-04-2020 11:45:01*********************************
+[FECHA] : 09-04-2020 - [HORA] : 11:45:01 - [conversationID] : 176423 - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'transfer', queue: 'WhatsappTest' },
+  messages: 
+   [ { type: 'text',
+       text: 'En un momento mas uno de nuestros asesores lo atenderá' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : 176423 	 [authToken] :  abcdefghi	 [channel] : whatsapp
+ 
+*********************************09-04-2020 12:11:24*********************************
+[FECHA] : 09-04-2020 - [HORA] : 12:11:24 - [conversationID] : 140962 - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'continue', queue: undefined },
+  messages: 
+   [ { type: 'text',
+       text: '¡Hola! $cr Soy tu asistente virtual 🤖 de Claro $cr Te puedo ayudar con las siguientes opciones: $cr Envía *cotizar* para conocer nuestros planes móviles y residenciales. 😎 $cr Envía *precio* para ver el catálogo de celulares prepago por marca. 📱 $cr Envía *asesor* si aún deseas ser atendido por uno de nuestros agentes de servicio al cliente o ventas. 👩💻👨💻 $cr Envía *recarga* para hacer una recarga. $cr Envía *paquete* para comprar un paquete. $cr Envía *pagar* para ver el saldo, fecha de vencimiento y pagar tu factura móvil y residencial. 💳 $cr Envía *factura* para conocer tus opciones en consulta de facturas. (Monto y fecha de vencimiento) 📥 $cr Envía *configuración* para conocer los pasos a seguir si tienes inconvenientes con tu navegación 📱. $cr Envía *soporte* si presentas inconvenientes con tu router de tu internet residencial. ☎📺🖥 $cr Envía *club* para conocer los establecimientos con promociones especiales solo por ser cliente Claro. 😎 💰 $cr ' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : 140962 	 [authToken] :  abcdefghi	 [channel] : whatsapp
+ 
+*********************************09-04-2020 12:15:25*********************************
+[FECHA] : 09-04-2020 - [HORA] : 12:15:25 - [conversationID] : 140962 - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'continue', queue: '' },
+  messages: 
+   [ { type: 'text',
+       text: 'Ingresa al siguiente link http://bit.ly/TelemarketingClaro y unos de nuestros asesores se comunicará contigo de inmediato para que puedas cotizar nuestros planes móviles y residenciales de acuerdo a tus necesidades. 🤓' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : 140962 	 [authToken] :  abcdefghi	 [channel] : whatsapp
+ 
+*********************************09-04-2020 12:20:25*********************************
+[FECHA] : 09-04-2020 - [HORA] : 12:20:25 - [conversationID] : 140962 - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'continue', queue: '' },
+  messages: 
+   [ { type: 'text',
+       text: 'Conoce nuestros equipos disponibles 📥📁📱 ingresando aquí $cr https://tiendaenlinea.claro.com.gt/' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : 140962 	 [authToken] :  abcdefghi	 [channel] : whatsapp
+ 
+*********************************09-04-2020 12:21:03*********************************
+[FECHA] : 09-04-2020 - [HORA] : 12:21:03 - [conversationID] : 140962 - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'continue', queue: '' },
+  messages: 
+   [ { type: 'text',
+       text: 'Recarga fácil y rápido visitando nuestro portal: https://paquetes.miclaro.com.gt/ 😎' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : 140962 	 [authToken] :  abcdefghi	 [channel] : whatsapp
+ 
+*********************************09-04-2020 12:21:19*********************************
+[FECHA] : 09-04-2020 - [HORA] : 12:21:19 - [conversationID] : 140962 - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'continue', queue: '' },
+  messages: 
+   [ { type: 'text',
+       text: 'Compra el paquete que prefieras ingresando a https://paquetes.miclaro.com.gt' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : 140962 	 [authToken] :  abcdefghi	 [channel] : whatsapp
+ 
+*********************************09-04-2020 12:21:30*********************************
+[FECHA] : 09-04-2020 - [HORA] : 12:21:30 - [conversationID] : 140962 - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'continue', queue: '' },
+  messages: 
+   [ { type: 'text',
+       text: 'Para conocer el saldo, fecha de vencimiento y también poder pagar tu factura móvil y residencial, puedes ingresar al siguiente portal: gt.mipagoclaro.com 💳🧾' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : 140962 	 [authToken] :  abcdefghi	 [channel] : whatsapp
+ 
+*********************************09-04-2020 12:54:30*********************************
+[FECHA] : 09-04-2020 - [HORA] : 12:54:30 - [conversationID] : 140962 - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'continue', queue: '' },
+  messages: 
+   [ { type: 'text',
+       text: '👋 Te damos la bienvenida a la GigaRed Claro, nuestro compromiso es mantenerte conectado.😊 $cr $cr Ingresa el número de la opción con la que necesitas apoyo: $cr $cr 1. Adquirir un plan nuevo, información de promociones o renovar mi servicio $cr 2. Gestiones y soporte de mis servicios actuales $cr ' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : 140962 	 [authToken] :  abcdefghi	 [channel] : whatsapp
+ 
+*********************************09-04-2020 12:54:41*********************************
+[FECHA] : 09-04-2020 - [HORA] : 12:54:41 - [conversationID] : 140962 - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'transfer', queue: 'WhatsappTest' },
+  messages: 
+   [ { type: 'text',
+       text: 'En un momento mas uno de nuestros asesores lo atenderá' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : 140962 	 [authToken] :  abcdefghi	 [channel] : whatsapp
+ 
+*********************************09-04-2020 17:13:55*********************************
+[FECHA] : 09-04-2020 - [HORA] : 17:13:55 - [conversationID] : e02c623f28bf26c43dca701e - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'continue', queue: undefined },
+  messages: 
+   [ { type: 'text',
+       text: '¡Hola! $cr Soy tu asistente virtual 🤖 de Claro $cr Te puedo ayudar con las siguientes opciones: $cr Envía *cotizar* para conocer nuestros planes móviles y residenciales. 😎 $cr Envía *precio* para ver el catálogo de celulares prepago por marca. 📱 $cr Envía *asesor* si aún deseas ser atendido por uno de nuestros agentes de servicio al cliente o ventas. 👩💻👨💻 $cr Envía *recarga* para hacer una recarga. $cr Envía *paquete* para comprar un paquete. $cr Envía *pagar* para ver el saldo, fecha de vencimiento y pagar tu factura móvil y residencial. 💳 $cr Envía *factura* para conocer tus opciones en consulta de facturas. (Monto y fecha de vencimiento) 📥 $cr Envía *configuración* para conocer los pasos a seguir si tienes inconvenientes con tu navegación 📱. $cr Envía *soporte* si presentas inconvenientes con tu router de tu internet residencial. ☎📺🖥 $cr Envía *club* para conocer los establecimientos con promociones especiales solo por ser cliente Claro. 😎 💰 $cr ' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : e02c623f28bf26c43dca701e 	 [authToken] :  1	 [channel] : smooch-wsp
+ 
+*********************************09-04-2020 21:06:54*********************************
+[FECHA] : 09-04-2020 - [HORA] : 21:06:54 - [conversationID] : 9e5ca44eb6e4a5bb0596a324 - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'continue', queue: undefined },
+  messages: 
+   [ { type: 'text',
+       text: '¡Hola! $cr Soy tu asistente virtual 🤖 de Claro $cr Te puedo ayudar con las siguientes opciones: $cr Envía *cotizar* para conocer nuestros planes móviles y residenciales. 😎 $cr Envía *precio* para ver el catálogo de celulares prepago por marca. 📱 $cr Envía *asesor* si aún deseas ser atendido por uno de nuestros agentes de servicio al cliente o ventas. 👩💻👨💻 $cr Envía *recarga* para hacer una recarga. $cr Envía *paquete* para comprar un paquete. $cr Envía *pagar* para ver el saldo, fecha de vencimiento y pagar tu factura móvil y residencial. 💳 $cr Envía *factura* para conocer tus opciones en consulta de facturas. (Monto y fecha de vencimiento) 📥 $cr Envía *configuración* para conocer los pasos a seguir si tienes inconvenientes con tu navegación 📱. $cr Envía *soporte* si presentas inconvenientes con tu router de tu internet residencial. ☎📺🖥 $cr Envía *club* para conocer los establecimientos con promociones especiales solo por ser cliente Claro. 😎 💰 $cr ' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : 9e5ca44eb6e4a5bb0596a324 	 [authToken] :  1	 [channel] : smooch-wsp
+ 
+*********************************09-04-2020 21:07:44*********************************
+[FECHA] : 09-04-2020 - [HORA] : 21:07:44 - [conversationID] : 9e5ca44eb6e4a5bb0596a324 - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'continue', queue: '' },
+  messages: 
+   [ { type: 'text',
+       text: 'Para conocer el saldo, fecha de vencimiento y también poder pagar tu factura móvil y residencial, puedes ingresar al siguiente portal: gt.mipagoclaro.com 💳🧾' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : 9e5ca44eb6e4a5bb0596a324 	 [authToken] :  1	 [channel] : smooch-wsp
+ 
+*********************************09-04-2020 21:08:26*********************************
+[FECHA] : 09-04-2020 - [HORA] : 21:08:26 - [conversationID] : 9e5ca44eb6e4a5bb0596a324 - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'continue', queue: '' },
+  messages: 
+   [ { type: 'text',
+       text: 'Ingresa al siguiente link http://bit.ly/TelemarketingClaro y unos de nuestros asesores se comunicará contigo de inmediato para que puedas cotizar nuestros planes móviles y residenciales de acuerdo a tus necesidades. 🤓' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : 9e5ca44eb6e4a5bb0596a324 	 [authToken] :  1	 [channel] : smooch-wsp
+ 
+*********************************09-04-2020 21:09:17*********************************
+[FECHA] : 09-04-2020 - [HORA] : 21:09:17 - [conversationID] : 9e5ca44eb6e4a5bb0596a324 - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'continue', queue: '' },
+  messages: 
+   [ { type: 'text',
+       text: 'Recarga fácil y rápido visitando nuestro portal: https://paquetes.miclaro.com.gt/ 😎' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : 9e5ca44eb6e4a5bb0596a324 	 [authToken] :  1	 [channel] : smooch-wsp
+ 
+*********************************09-04-2020 21:09:51*********************************
+[FECHA] : 09-04-2020 - [HORA] : 21:09:51 - [conversationID] : 9e5ca44eb6e4a5bb0596a324 - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'continue', queue: undefined },
+  messages: 
+   [ { type: 'text',
+       text: '¡Hola! $cr Soy tu asistente virtual 🤖 de Claro $cr Te puedo ayudar con las siguientes opciones: $cr Envía *cotizar* para conocer nuestros planes móviles y residenciales. 😎 $cr Envía *precio* para ver el catálogo de celulares prepago por marca. 📱 $cr Envía *asesor* si aún deseas ser atendido por uno de nuestros agentes de servicio al cliente o ventas. 👩💻👨💻 $cr Envía *recarga* para hacer una recarga. $cr Envía *paquete* para comprar un paquete. $cr Envía *pagar* para ver el saldo, fecha de vencimiento y pagar tu factura móvil y residencial. 💳 $cr Envía *factura* para conocer tus opciones en consulta de facturas. (Monto y fecha de vencimiento) 📥 $cr Envía *configuración* para conocer los pasos a seguir si tienes inconvenientes con tu navegación 📱. $cr Envía *soporte* si presentas inconvenientes con tu router de tu internet residencial. ☎📺🖥 $cr Envía *club* para conocer los establecimientos con promociones especiales solo por ser cliente Claro. 😎 💰 $cr ' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : 9e5ca44eb6e4a5bb0596a324 	 [authToken] :  1	 [channel] : smooch-wsp
+ 
+*********************************10-04-2020 19:32:04*********************************
+[FECHA] : 10-04-2020 - [HORA] : 19:32:04 - [conversationID] : 00cfe9f5f16838b036ba1260 - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'continue', queue: undefined },
+  messages: 
+   [ { type: 'text',
+       text: '¡Hola! $cr Soy tu asistente virtual 🤖 de Claro $cr Te puedo ayudar con las siguientes opciones: $cr Envía *cotizar* para conocer nuestros planes móviles y residenciales. 😎 $cr Envía *precio* para ver el catálogo de celulares prepago por marca. 📱 $cr Envía *asesor* si aún deseas ser atendido por uno de nuestros agentes de servicio al cliente o ventas. 👩💻👨💻 $cr Envía *recarga* para hacer una recarga. $cr Envía *paquete* para comprar un paquete. $cr Envía *pagar* para ver el saldo, fecha de vencimiento y pagar tu factura móvil y residencial. 💳 $cr Envía *factura* para conocer tus opciones en consulta de facturas. (Monto y fecha de vencimiento) 📥 $cr Envía *configuración* para conocer los pasos a seguir si tienes inconvenientes con tu navegación 📱. $cr Envía *soporte* si presentas inconvenientes con tu router de tu internet residencial. ☎📺🖥 $cr Envía *club* para conocer los establecimientos con promociones especiales solo por ser cliente Claro. 😎 💰 $cr ' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : 00cfe9f5f16838b036ba1260 	 [authToken] :  1	 [channel] : smooch-wsp
+ 
+*********************************10-04-2020 19:50:43*********************************
+[FECHA] : 10-04-2020 - [HORA] : 19:50:43 - [conversationID] : 9a21baedc64dc3f905a5bba5 - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'continue', queue: undefined },
+  messages: 
+   [ { type: 'text',
+       text: '¡Hola! $cr Soy tu asistente virtual 🤖 de Claro $cr Te puedo ayudar con las siguientes opciones: $cr Envía *cotizar* para conocer nuestros planes móviles y residenciales. 😎 $cr Envía *precio* para ver el catálogo de celulares prepago por marca. 📱 $cr Envía *asesor* si aún deseas ser atendido por uno de nuestros agentes de servicio al cliente o ventas. 👩💻👨💻 $cr Envía *recarga* para hacer una recarga. $cr Envía *paquete* para comprar un paquete. $cr Envía *pagar* para ver el saldo, fecha de vencimiento y pagar tu factura móvil y residencial. 💳 $cr Envía *factura* para conocer tus opciones en consulta de facturas. (Monto y fecha de vencimiento) 📥 $cr Envía *configuración* para conocer los pasos a seguir si tienes inconvenientes con tu navegación 📱. $cr Envía *soporte* si presentas inconvenientes con tu router de tu internet residencial. ☎📺🖥 $cr Envía *club* para conocer los establecimientos con promociones especiales solo por ser cliente Claro. 😎 💰 $cr ' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : 9a21baedc64dc3f905a5bba5 	 [authToken] :  1	 [channel] : smooch-wsp
+ 
+*********************************10-04-2020 19:51:04*********************************
+[FECHA] : 10-04-2020 - [HORA] : 19:51:04 - [conversationID] : 9a21baedc64dc3f905a5bba5 - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'continue', queue: '' },
+  messages: 
+   [ { type: 'text',
+       text: 'Sigue los pasos detallados en la imagen, si el inconveniente persiste, favor escribe asesor para recibir asistencia técnica con uno de nuestros agentes. (Infografía Router) (skill móvil actual opción 2)' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : 9a21baedc64dc3f905a5bba5 	 [authToken] :  1	 [channel] : smooch-wsp
+ 
+*********************************10-04-2020 20:27:17*********************************
+[FECHA] : 10-04-2020 - [HORA] : 20:27:17 - [conversationID] : 9a21baedc64dc3f905a5bba5 - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'continue', queue: undefined },
+  messages: 
+   [ { type: 'text',
+       text: '¡Hola! $cr Soy tu asistente virtual 🤖 de Claro $cr Te puedo ayudar con las siguientes opciones: $cr Envía *cotizar* para conocer nuestros planes móviles y residenciales. 😎 $cr Envía *precio* para ver el catálogo de celulares prepago por marca. 📱 $cr Envía *asesor* si aún deseas ser atendido por uno de nuestros agentes de servicio al cliente o ventas. 👩💻👨💻 $cr Envía *recarga* para hacer una recarga. $cr Envía *paquete* para comprar un paquete. $cr Envía *pagar* para ver el saldo, fecha de vencimiento y pagar tu factura móvil y residencial. 💳 $cr Envía *factura* para conocer tus opciones en consulta de facturas. (Monto y fecha de vencimiento) 📥 $cr Envía *configuración* para conocer los pasos a seguir si tienes inconvenientes con tu navegación 📱. $cr Envía *soporte* si presentas inconvenientes con tu router de tu internet residencial. ☎📺🖥 $cr Envía *club* para conocer los establecimientos con promociones especiales solo por ser cliente Claro. 😎 💰 $cr ' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : 9a21baedc64dc3f905a5bba5 	 [authToken] :  1	 [channel] : smooch-wsp
+ 
+*********************************10-04-2020 20:27:44*********************************
+[FECHA] : 10-04-2020 - [HORA] : 20:27:44 - [conversationID] : 9a21baedc64dc3f905a5bba5 - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'continue', queue: '' },
+  messages: 
+   [ { type: 'text',
+       text: 'Para conocer el saldo, fecha de vencimiento y también poder pagar tu factura móvil y residencial, puedes ingresar al siguiente portal: gt.mipagoclaro.com 💳🧾' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : 9a21baedc64dc3f905a5bba5 	 [authToken] :  1	 [channel] : smooch-wsp
+ 
+*********************************10-04-2020 20:28:00*********************************
+[FECHA] : 10-04-2020 - [HORA] : 20:28:00 - [conversationID] : 9a21baedc64dc3f905a5bba5 - [Accion] : /message 
+ [STATUS] : 200 - [Resultado] : 
+{ context: { agent: false, callback: false, video: false },
+  action: { type: 'continue', queue: '' },
+  messages: 
+   [ { type: 'text',
+       text: 'Puedes descargar tu factura móvil ingresando al siguiente portal: http://bit.ly/MiClaroFactura' } ],
+  additionalInfo: { key: 'RUT', RUT: '1-9' } }
+****************************[DATOS DE ENTRADA]****************************
+[apiVersion] : 1.0 	 [conversationID] : 9a21baedc64dc3f905a5bba5 	 [authToken] :  1	 [channel] : smooch-wsp
+ 
