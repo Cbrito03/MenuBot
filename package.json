@@ -4,8 +4,7 @@
   "description": "Ejemplo de WS en NodeJS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "API",
@@ -21,9 +20,6 @@
     "localStorage": "^1.0.4",
     "node-localstorage": "^2.1.5",
     "request": "^2.88.2"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.3"
   },
   "engines": {
     "node": "^10.19.0",
