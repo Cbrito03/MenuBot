@@ -11,60 +11,70 @@ msj_asesor += "2. Gestiones y soporte de mis servicios actuales $cr ";
 
 var palabras = {
   "club": {
+      "type": "text",
       "accion" : "continue", 
       "queue" : "",
       "mensaje" : "Si eres Claro 😉 eres parte del club con beneficios y descuentos. $cr ¡Descarga la App! 👇 $cr Android: http://bit.ly/ClaroClub-Android $cr iOS: http://bit.ly/ClaroClubiOS",
       "mediaURL" : ""
   },
   "cotizar": {
+      "type": "text",
       "accion" : "continue",
       "queue" : "",
       "mensaje" : "Ingresa al siguiente link http://bit.ly/TelemarketingClaro y unos de nuestros asesores se comunicará contigo de inmediato para que puedas cotizar nuestros planes móviles y residenciales de acuerdo a tus necesidades. 🤓",
       "mediaURL" : ""
   },
   "precio": {
+      "type": "text",
       "accion" : "continue",
       "queue" : "",
       "mensaje" : "Conoce nuestros equipos disponibles 📥📁📱 ingresando aquí $cr https://tiendaenlinea.claro.com.gt/",
       "mediaURL" : ""
   },
   "recarga": {
+      "type": "text",
       "accion" : "continue",
       "queue" : "",
       "mensaje" : "Recarga fácil y rápido visitando nuestro portal: https://paquetes.miclaro.com.gt/ 😎",
       "mediaURL" : ""
   },
   "Paquete": {
+      "type": "text",
       "accion" : "continue",
       "queue" : "",
       "mensaje" : "Compra el paquete que prefieras ingresando a https://paquetes.miclaro.com.gt",
       "mediaURL" : ""
   },
   "pagar": {
+      "type": "text",
       "accion" : "continue",
       "queue" : "",
       "mensaje" : "Para conocer el saldo, fecha de vencimiento y también poder pagar tu factura móvil y residencial, puedes ingresar al siguiente portal: gt.mipagoclaro.com 💳🧾",
       "mediaURL" : ""
   },
   "factura": {
+      "type": "text",
       "accion" : "continue",
       "queue" : "",
       "mensaje" : "Puedes descargar tu factura móvil ingresando al siguiente portal: http://bit.ly/MiClaroFactura",
       "mediaURL" : ""
   },
   "configuracion": {
+      "type": "image",
       "accion" : "continue",
       "queue" : "",
       "mensaje" : "Sigue los pasos detallados en la imagen, si el inconveniente persiste, favor escribe *asesor* para recibir asistencia técnica con uno de nuestros agentes.",
       "mediaURL" : "https://nodejsmenubotca.mybluemix.net/APN%20GT.jpeg"
   },
   "soporte": {
+      "type": "image",
       "accion" : "continue",
       "queue" : "",
       "mensaje" : "Sigue los pasos detallados en la imagen, si el inconveniente persiste, favor escribe *asesor* para recibir asistencia técnica con uno de nuestros agentes.",
       "mediaURL" : "https://nodejsmenubotca.mybluemix.net/Router.jpeg"
   },
   "asesor": {
+      "type": "text",
       "accion" : "continue",
       "queue" : "",
       "mensaje" : msj_asesor
