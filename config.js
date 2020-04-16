@@ -13,47 +13,56 @@ var palabras = {
   "club": {
       "accion" : "continue", 
       "queue" : "",
-      "mensaje": "Si eres Claro 😉 eres parte del club con beneficios y descuentos. $cr ¡Descarga la App! 👇 $cr Android: http://bit.ly/ClaroClub-Android $cr iOS: http://bit.ly/ClaroClubiOS"
+      "mensaje" : "Si eres Claro 😉 eres parte del club con beneficios y descuentos. $cr ¡Descarga la App! 👇 $cr Android: http://bit.ly/ClaroClub-Android $cr iOS: http://bit.ly/ClaroClubiOS",
+      "mediaURL" : ""
   },
   "cotizar": {
       "accion" : "continue",
       "queue" : "",
-      "mensaje" : "Ingresa al siguiente link http://bit.ly/TelemarketingClaro y unos de nuestros asesores se comunicará contigo de inmediato para que puedas cotizar nuestros planes móviles y residenciales de acuerdo a tus necesidades. 🤓"
+      "mensaje" : "Ingresa al siguiente link http://bit.ly/TelemarketingClaro y unos de nuestros asesores se comunicará contigo de inmediato para que puedas cotizar nuestros planes móviles y residenciales de acuerdo a tus necesidades. 🤓",
+      "mediaURL" : ""
   },
   "precio": {
       "accion" : "continue",
       "queue" : "",
-      "mensaje" : "Conoce nuestros equipos disponibles 📥📁📱 ingresando aquí $cr https://tiendaenlinea.claro.com.gt/"
+      "mensaje" : "Conoce nuestros equipos disponibles 📥📁📱 ingresando aquí $cr https://tiendaenlinea.claro.com.gt/",
+      "mediaURL" : ""
   },
   "recarga": {
       "accion" : "continue",
       "queue" : "",
-      "mensaje" : "Recarga fácil y rápido visitando nuestro portal: https://paquetes.miclaro.com.gt/ 😎"
+      "mensaje" : "Recarga fácil y rápido visitando nuestro portal: https://paquetes.miclaro.com.gt/ 😎",
+      "mediaURL" : ""
   },
   "Paquete": {
       "accion" : "continue",
       "queue" : "",
-      "mensaje" : "Compra el paquete que prefieras ingresando a https://paquetes.miclaro.com.gt"
+      "mensaje" : "Compra el paquete que prefieras ingresando a https://paquetes.miclaro.com.gt",
+      "mediaURL" : ""
   },
   "pagar": {
       "accion" : "continue",
       "queue" : "",
-      "mensaje" : "Para conocer el saldo, fecha de vencimiento y también poder pagar tu factura móvil y residencial, puedes ingresar al siguiente portal: gt.mipagoclaro.com 💳🧾"
+      "mensaje" : "Para conocer el saldo, fecha de vencimiento y también poder pagar tu factura móvil y residencial, puedes ingresar al siguiente portal: gt.mipagoclaro.com 💳🧾",
+      "mediaURL" : ""
   },
   "factura": {
       "accion" : "continue",
       "queue" : "",
-      "mensaje" : "Puedes descargar tu factura móvil ingresando al siguiente portal: http://bit.ly/MiClaroFactura"
+      "mensaje" : "Puedes descargar tu factura móvil ingresando al siguiente portal: http://bit.ly/MiClaroFactura",
+      "mediaURL" : ""
   },
   "configuracion": {
       "accion" : "continue",
       "queue" : "",
-      "mensaje" : "Sigue los pasos detallados en la imagen, si el inconveniente persiste, favor escribe asesor para recibir asistencia técnica con uno de nuestros agentes. https://nodejsmenubotca.mybluemix.net/APN%20GT.jpeg"
+      "mensaje" : "Sigue los pasos detallados en la imagen, si el inconveniente persiste, favor escribe asesor para recibir asistencia técnica con uno de nuestros agentes.",
+      "mediaURL" : "https://nodejsmenubotca.mybluemix.net/APN%20GT.jpeg"
   },
   "soporte": {
       "accion" : "continue",
       "queue" : "",
-      "mensaje" : "Sigue los pasos detallados en la imagen, si el inconveniente persiste, favor escribe asesor para recibir asistencia técnica con uno de nuestros agentes. https://nodejsmenubotca.mybluemix.net/Router.jpeg"
+      "mensaje" : "Sigue los pasos detallados en la imagen, si el inconveniente persiste, favor escribe asesor para recibir asistencia técnica con uno de nuestros agentes.",
+      "mediaURL" : "https://nodejsmenubotca.mybluemix.net/Router.jpeg"
   },
   "asesor": {
       "accion" : "continue",
@@ -139,8 +148,6 @@ obtener_fecha = function()
     exports.fecha_actual = fecha_actual;
     exports.hora_actual = hora_actual;
 }
-
-
 
 exports.palabras = palabras;
 

@@ -164,7 +164,8 @@ app.post('/message', (req, res) => {
                 "messages":[
                   {
                     "type":"text",
-                    "text": result.mensaje
+                    "text": result.mensaje,
+                    "mediaURL": result.mediaURL
                   }
                 ],
                 "additionalInfo": {
