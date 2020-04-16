@@ -64,14 +64,14 @@ var palabras = {
       "accion" : "continue",
       "queue" : "",
       "mensaje" : "Sigue los pasos detallados en la imagen, si el inconveniente persiste, favor escribe *asesor* para recibir asistencia técnica con uno de nuestros agentes.",
-      "mediaURL" : "https://nodejsmenubotca.mybluemix.net/APN%20GT.jpeg"
+      "mediaURL" : "https://nodejsmenubotca.mybluemix.net/APN%20GT.png"
   },
   "soporte": {
       "type": "image",
       "accion" : "continue",
       "queue" : "",
       "mensaje" : "Sigue los pasos detallados en la imagen, si el inconveniente persiste, favor escribe *asesor* para recibir asistencia técnica con uno de nuestros agentes.",
-      "mediaURL" : "https://nodejsmenubotca.mybluemix.net/Router.jpeg"
+      "mediaURL" : "https://nodejsmenubotca.mybluemix.net/Router.png"
   },
   "asesor": {
       "type": "text",
