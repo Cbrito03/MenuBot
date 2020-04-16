@@ -55,13 +55,13 @@ var palabras = {
   "configuracion": {
       "accion" : "continue",
       "queue" : "",
-      "mensaje" : "Sigue los pasos detallados en la imagen, si el inconveniente persiste, favor escribe asesor para recibir asistencia técnica con uno de nuestros agentes.",
+      "mensaje" : "Sigue los pasos detallados en la imagen, si el inconveniente persiste, favor escribe *asesor* para recibir asistencia técnica con uno de nuestros agentes.",
       "mediaURL" : "https://nodejsmenubotca.mybluemix.net/APN%20GT.jpeg"
   },
   "soporte": {
       "accion" : "continue",
       "queue" : "",
-      "mensaje" : "Sigue los pasos detallados en la imagen, si el inconveniente persiste, favor escribe asesor para recibir asistencia técnica con uno de nuestros agentes.",
+      "mensaje" : "Sigue los pasos detallados en la imagen, si el inconveniente persiste, favor escribe *asesor* para recibir asistencia técnica con uno de nuestros agentes.",
       "mediaURL" : "https://nodejsmenubotca.mybluemix.net/Router.jpeg"
   },
   "asesor": {
