@@ -15,6 +15,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(bodyParser.json());
 
+//app.use( express.static( "public" ) );
+
+app.use(express.static('img'));
+
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
@@ -51,11 +55,7 @@ var menu_opciones = config.menu_opciones;
 
 app.post('/message', (req, res) => {
   config.obtener_fecha();
-  console.log("Peticion POST /message [FECHA-HORA] : "+config.fecha_actual+" "+config.hora_actual);
-
-  //localStorage.removeItem("msj_"+conversationID);
-
-  
+  console.log("Peticion POST /message [FECHA-HORA] : "+config.fecha_actual+" "+config.hora_actual);  
   var result, resultado;
   var bandera = false , estatus = 200;
   var msj_buscar = "", msj_buscar_opcion = "";
@@ -94,6 +94,8 @@ app.post('/message', (req, res) => {
               {
                 for(var atr in palabras)
                 {
+                  if(cadena[i] === "configuración"){ cadena[i] = 'configuracion'}
+
                   if(atr.toLowerCase() === cadena[i])
                   {
                     msj_buscar = cadena[i];
@@ -112,7 +114,7 @@ app.post('/message', (req, res) => {
 
               if(localStorage.getItem("msj_"+conversationID) == null) // No existe
               {
-                console.log('No existe :: ' + localStorage.getItem("msj_"+conversationID));
+                console.log('Crea Storage :: ' + localStorage.getItem("msj_"+conversationID));
 
                 if(msj_buscar == "configuracion" || msj_buscar == "soporte")
                 {
@@ -127,7 +129,7 @@ app.post('/message', (req, res) => {
               }
               else // esite localStorage
               {
-                console.log('ya existe :: ' + localStorage.getItem("msj_"+conversationID));
+                console.log('Borra Storage :: ' + localStorage.getItem("msj_"+conversationID));
 
                 if((localStorage.getItem("msj_"+conversationID) == "configuracion" || localStorage.getItem("msj_"+conversationID) == "soporte") && msj_buscar == "asesor")
                 {
@@ -278,6 +280,10 @@ app.post('/terminate', (req, res) => {
 
   res.status(estatus).json(resultado);
 })
+
+app.get('/:img', function(req, res){
+    res.sendFile( `img/${img}` );
+}); 
 
 app.get('/', (req, res) => {
   res.status(200).send("Bienvenido al menú Bot, las opciones disponibles son: <br> /message<br> /terminate")
