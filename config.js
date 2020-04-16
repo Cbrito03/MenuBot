@@ -3,6 +3,7 @@ var cola_opc1 = "WhatsappTest";
 var cola_opc2 = "WhatsappSM";
 
 // se agrego imagened
+// Alexis 16-04-2020
 
 var msj_asesor = "👋 Te damos la bienvenida a la GigaRed Claro, nuestro compromiso es mantenerte conectado.😊 $cr $cr ";
 msj_asesor += "Ingresa el número de la opción con la que necesitas apoyo: $cr $cr ";
