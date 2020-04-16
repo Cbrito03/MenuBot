@@ -163,7 +163,7 @@ app.post('/message', (req, res) => {
                 },
                 "messages":[
                   {
-                    "type":"text",
+                    "type": result.type,
                     "text": result.mensaje,
                     "mediaURL": result.mediaURL
                   }
