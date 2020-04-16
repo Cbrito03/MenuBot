@@ -111,8 +111,7 @@ var palabras_buscar = [
 
 var mensaje_df = "¡Hola! $cr Soy tu asistente virtual 🤖 de Claro $cr Te puedo ayudar con las siguientes opciones: $cr "
   mensaje_df +="Envía *cotizar* para conocer nuestros planes móviles y residenciales. 😎 $cr "
-  mensaje_df +="Envía *precio* para ver el catálogo de celulares prepago por marca. 📱 $cr ";
-  mensaje_df +="Envía *asesor* si aún deseas ser atendido por uno de nuestros agentes de servicio al cliente o ventas. 👩💻👨💻 $cr ";
+  mensaje_df +="Envía *precio* para ver el catálogo de celulares prepago por marca. 📱 $cr ";  
   mensaje_df +="Envía *recarga* para hacer una recarga. $cr ";
   mensaje_df +="Envía *paquete* para comprar un paquete. $cr ";
   mensaje_df +="Envía *pagar* para ver el saldo, fecha de vencimiento y pagar tu factura móvil y residencial. 💳 $cr ";
@@ -120,6 +119,7 @@ var mensaje_df = "¡Hola! $cr Soy tu asistente virtual 🤖 de Claro $cr Te pued
   mensaje_df +="Envía *configuración* para conocer los pasos a seguir si tienes inconvenientes con tu navegación 📱. $cr ";
   mensaje_df +="Envía *soporte* si presentas inconvenientes con tu router de tu internet residencial. ☎📺🖥 $cr ";
   mensaje_df +="Envía *club* para conocer los establecimientos con promociones especiales solo por ser cliente Claro. 😎 💰 $cr ";
+  mensaje_df +="Envía *asesor* si aún deseas ser atendido por uno de nuestros agentes de servicio al cliente o ventas. 👩💻👨💻 $cr ";
 
 var msj_default = {
   "accion": "continue",
