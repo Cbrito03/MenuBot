@@ -66,14 +66,14 @@ var palabras = {
       "accion" : "continue",
       "queue" : "",
       "mensaje" : "Sigue los pasos detallados en la imagen, si el inconveniente persiste, favor escribe *asesor* para recibir asistencia técnica con uno de nuestros agentes.",
-      "mediaURL" : "http://187.210.40.89:3700/APN%20GT.png"
+      "mediaURL" : "http://187.210.40.89:3700/APN%20GT.jpeg"
   },
   "soporte": {
       "type": "image",
       "accion" : "continue",
       "queue" : "",
       "mensaje" : "Sigue los pasos detallados en la imagen, si el inconveniente persiste, favor escribe *asesor* para recibir asistencia técnica con uno de nuestros agentes.",
-      "mediaURL" : "http://187.210.40.89:3700/Router.png"
+      "mediaURL" : "http://187.210.40.89:3700/Router.jpeg"
   },
   "asesor": {
       "type": "text",
