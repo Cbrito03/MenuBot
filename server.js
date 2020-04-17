@@ -52,6 +52,7 @@ var palabras = config.palabras;
 var palabras_buscar = config.palabras_buscar; // no se utiliza 
 var msj_dafault = config.msj_default;
 var menu_opciones = config.menu_opciones;
+var messaje_def_opdos = config.messaje_def_opdos;
 
 app.post('/message', (req, res) => {
   config.obtener_fecha();

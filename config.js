@@ -66,14 +66,14 @@ var palabras = {
       "accion" : "continue",
       "queue" : "",
       "mensaje" : "Sigue los pasos detallados en la imagen, si el inconveniente persiste, favor escribe *asesor* para recibir asistencia técnica con uno de nuestros agentes.",
-      "mediaURL" : "http://187.210.40.89:3700/APN%20GT.png"
+      "mediaURL" : "https://nodejsmenubotca.mybluemix.net/APN%20GT.jpeg"
   },
   "soporte": {
       "type": "image",
       "accion" : "continue",
       "queue" : "",
       "mensaje" : "Sigue los pasos detallados en la imagen, si el inconveniente persiste, favor escribe *asesor* para recibir asistencia técnica con uno de nuestros agentes.",
-      "mediaURL" : "http://187.210.40.89:3700/Router.png"
+      "mediaURL" : "https://nodejsmenubotca.mybluemix.net/Router.jpeg"
   },
   "asesor": {
       "type": "text",
@@ -127,6 +127,7 @@ var msj_default = {
   "accion": "continue",
   "mensaje" : mensaje_df
 }
+var messaje_def_opdos = "Pedimos tu comprensión por los tiempos de espera. Puedes utilizar, sin costo alguno, nuestros canales digitales de autogestión: Mi Pago Claro (https://gt.mipagoclaro.com/), Mi Claro Express (https://paquetes.miclaro.com.gt/) Menú Digital (http://bit.ly/ClaroMenuDigital) y consultas de saldos de facturas enviando tu número de teléfono por mensaje de texto a la marcación 147100. ¡Claro que sí!";
 
 var msj_asesor = ""
 
@@ -172,3 +173,5 @@ exports.msj_default = msj_default;
 exports.bandera_log = bandera_log;
 
 exports.obtener_fecha = obtener_fecha;
+
+exports.messaje_def_opdos = messaje_def_opdos;
