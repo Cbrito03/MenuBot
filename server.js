@@ -151,6 +151,11 @@ app.post('/message', (req, res) => {
                   result = menu_opciones[msj_buscar_opcion];
                   bandera = true;
                 }
+                else if(msj_buscar == "asesor")
+                {
+                  bandera_asesor = true;
+                  //console.log("Se Creo para "+ msj_buscar +" :: " + localStorage.getItem("msj_"+conversationID));
+                }   
               }              
 
               if(!bandera){ result = msj_dafault;}
