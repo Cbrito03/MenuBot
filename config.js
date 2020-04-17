@@ -10,7 +10,7 @@ var msj_asesor_uno = 'Pedimos tu comprensión por los tiempos de espera. Puedes 
     msj_asesor_uno += '(https://gt.mipagoclaro.com/), Mi Claro Express (https://paquetes.miclaro.com.gt/)';
     msj_asesor_uno += 'Menú Digital (http://bit.ly/ClaroMenuDigital) y consultas de saldos de facturas enviando';
     msj_asesor_uno += 'tu número de teléfono por mensaje de texto a la marcación 147100.';
-    msj_asesor_uno += '¡Claro que sí!" y "En un momento mas uno de nuestros asesores lo atenderá"';
+    msj_asesor_uno += '¡Claro que sí!';
 
 var msj_asesor_dos = "👋 Te damos la bienvenida a la GigaRed Claro, nuestro compromiso es mantenerte conectado.😊 $cr $cr ";
 msj_asesor_dos += "Ingresa el número de la opción con la que necesitas apoyo: $cr $cr ";
