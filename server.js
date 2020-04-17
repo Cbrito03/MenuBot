@@ -52,13 +52,12 @@ var palabras = config.palabras;
 var palabras_buscar = config.palabras_buscar; // no se utiliza 
 var msj_dafault = config.msj_default;
 var menu_opciones = config.menu_opciones;
-var messaje_def_opdos = config.messaje_def_opdos;
 
 app.post('/message', (req, res) => {
   config.obtener_fecha();
   console.log("Peticion POST /message [FECHA-HORA] : "+config.fecha_actual+" "+config.hora_actual);  
   var result, resultado;
-  var bandera = false , estatus = 200;
+  var bandera = false , estatus = 200 , menu_dos = 0;
   var msj_buscar = "", msj_buscar_opcion = "";
 
   var apiVersion = req.body.apiVersion;
@@ -69,6 +68,7 @@ app.post('/message', (req, res) => {
   var user = req.body.user;
   var context = req.body.context;
   var cadena = req.body.message;
+  var bandera_asesor = false;
 
   log_file.write(util.format('*********************************'+config.fecha_actual+' '+config.hora_actual+'*********************************')+'\n');
   
@@ -96,6 +96,10 @@ app.post('/message', (req, res) => {
                 for(var atr in palabras)
                 {
                   if(cadena[i] === "configuración"){ cadena[i] = 'configuracion'}
+                  /*if(cadena[i] === "asesor")
+                  { 
+                    bandera_asesor = true;
+                  }*/
 
                   if(atr.toLowerCase() === cadena[i])
                   {
@@ -124,9 +128,10 @@ app.post('/message', (req, res) => {
                 }
                 else if(msj_buscar == "asesor")
                 {
+                  bandera_asesor = true;
                   localStorage.setItem("msj_"+conversationID, msj_buscar);
                   //console.log("Se Creo para "+ msj_buscar +" :: " + localStorage.getItem("msj_"+conversationID));
-                }               
+                }             
               }
               else // esite localStorage
               {
@@ -173,6 +178,17 @@ app.post('/message', (req, res) => {
                   "key":"RUT",
                   "RUT":"1-9"
                 }
+              }
+
+              if(bandera_asesor)
+              {
+                resultado.messages.push(
+                {
+                  "type": result.type,
+                  "text": result.mensaje_dos,
+                  "mediaURL": result.mediaURL
+                }
+                );
               }
               
             }

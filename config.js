@@ -5,11 +5,17 @@ var cola_opc2 = "WhatsappSM";
 // se agrego imagened
 // Alexis 16-04-2020
 //favi 16-04-2020
+var msj_asesor_uno = 'Pedimos tu comprensión por los tiempos de espera. Puedes utilizar, sin';
+    msj_asesor_uno += 'costo alguno, nuestros canales digitales de autogestión: Mi Pago Claro';
+    msj_asesor_uno += '(https://gt.mipagoclaro.com/), Mi Claro Express (https://paquetes.miclaro.com.gt/)';
+    msj_asesor_uno += 'Menú Digital (http://bit.ly/ClaroMenuDigital) y consultas de saldos de facturas enviando';
+    msj_asesor_uno += 'tu número de teléfono por mensaje de texto a la marcación 147100.';
+    msj_asesor_uno += '¡Claro que sí!" y "En un momento mas uno de nuestros asesores lo atenderá"';
 
-var msj_asesor = "👋 Te damos la bienvenida a la GigaRed Claro, nuestro compromiso es mantenerte conectado.😊 $cr $cr ";
-msj_asesor += "Ingresa el número de la opción con la que necesitas apoyo: $cr $cr ";
-msj_asesor += "1. Adquirir un plan nuevo, información de promociones o renovar mi servicio $cr ";
-msj_asesor += "2. Gestiones y soporte de mis servicios actuales $cr ";
+var msj_asesor_dos = "👋 Te damos la bienvenida a la GigaRed Claro, nuestro compromiso es mantenerte conectado.😊 $cr $cr ";
+msj_asesor_dos += "Ingresa el número de la opción con la que necesitas apoyo: $cr $cr ";
+msj_asesor_dos += "1. Adquirir un plan nuevo, información de promociones o renovar mi servicio $cr ";
+msj_asesor_dos += "2. Gestiones y soporte de mis servicios actuales $cr ";
 
 var palabras = {
   "club": {
@@ -79,7 +85,9 @@ var palabras = {
       "type": "text",
       "accion" : "continue",
       "queue" : "",
-      "mensaje" : msj_asesor
+      "mensaje" : msj_asesor_uno,      
+      "mensaje_dos" : msj_asesor_dos,
+      "mediaURL" : ""
   }  
 }
 
