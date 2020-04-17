@@ -13,9 +13,9 @@ var msj_asesor_uno = 'Pedimos tu comprensión por los tiempos de espera. Puedes 
     msj_asesor_uno += '¡Claro que sí!';
 
 var msj_asesor_dos = "👋 Te damos la bienvenida a la GigaRed Claro, nuestro compromiso es mantenerte conectado.😊 $cr $cr ";
-msj_asesor_dos += "Ingresa el número de la opción con la que necesitas apoyo: $cr $cr ";
-msj_asesor_dos += "1. Adquirir un plan nuevo, información de promociones o renovar mi servicio $cr ";
-msj_asesor_dos += "2. Gestiones y soporte de mis servicios actuales $cr ";
+    msj_asesor_dos += "Ingresa el número de la opción con la que necesitas apoyo: $cr $cr ";
+    msj_asesor_dos += "1. Adquirir un plan nuevo, información de promociones o renovar mi servicio $cr ";
+    msj_asesor_dos += "2. Gestiones y soporte de mis servicios actuales $cr ";
 
 var palabras = {
   "club": {
