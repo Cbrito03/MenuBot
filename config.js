@@ -1,6 +1,9 @@
-var cola_opc1 = "WhatsappTest";
+// Modifico Carlos Brito 18-04-2020 12:37 AM
+//var cola_opc1 = "WhatsappTest";
+var cola_opc1 = "GT_Wa_Ventas";
 
-var cola_opc2 = "WhatsappSM";
+//var cola_opc2 = "WhatsappSM";
+var cola_opc2 = "GT_Wa_Movil";
 
 // se agrego imagened
 // Alexis 16-04-2020
