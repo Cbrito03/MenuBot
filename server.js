@@ -91,17 +91,12 @@ app.post('/message', (req, res) => {
               cadena = cadena.replace(/,/g,"").replace(/;/g,"").replace(/:/g,"").replace(/\./g,""); // borramos ,;.:
               cadena = cadena.split(" "); // lo convertimo en array mediante los espacios
 
-
               for(var i = 0; i < cadena.length; i++)
               {
                 for(var atr in palabras)
                 {
                   if(cadena[i] === "configuración"){ cadena[i] = 'configuracion'}
-                  /*if(cadena[i] === "asesor")
-                  { 
-                    bandera_asesor = true;
-                  }*/
-
+                 
                   if(atr.toLowerCase() === cadena[i])
                   {
                     msj_buscar = cadena[i];
@@ -129,7 +124,6 @@ app.post('/message', (req, res) => {
                 }
                 else if(msj_buscar == "asesor")
                 {
-                  bandera_asesor = true;
                   localStorage.setItem("msj_"+conversationID, msj_buscar);
                   //console.log("Se Creo para "+ msj_buscar +" :: " + localStorage.getItem("msj_"+conversationID));
                 }             
@@ -152,11 +146,6 @@ app.post('/message', (req, res) => {
                   result = menu_opciones[msj_buscar_opcion];
                   bandera = true;
                 }
-                else if(msj_buscar == "asesor")
-                {
-                  bandera_asesor = true;
-                  //console.log("Se Creo para "+ msj_buscar +" :: " + localStorage.getItem("msj_"+conversationID));
-                }   
               }              
 
               if(!bandera){ result = msj_dafault;}
@@ -184,19 +173,7 @@ app.post('/message', (req, res) => {
                   "key":"RUT",
                   "RUT":"1-9"
                 }
-              }
-
-              if(bandera_asesor)
-              {
-                resultado.messages.push(
-                {
-                  "type": result.type,
-                  "text": result.mensaje_dos,
-                  "mediaURL": result.mediaURL
-                }
-                );
-              }
-              
+              }              
             }
             else
             {

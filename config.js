@@ -5,20 +5,10 @@ var cola_opc1 = "GT_Wa_Ventas";
 //var cola_opc2 = "WhatsappSM";
 var cola_opc2 = "GT_Wa_Movil";
 
-// se agrego imagened
-// Alexis 16-04-2020
-//favi 16-04-2020
-var msj_asesor_uno = 'Pedimos tu comprensión por los tiempos de espera. Puedes utilizar, sin';
-    msj_asesor_uno += 'costo alguno, nuestros canales digitales de autogestión: Mi Pago Claro';
-    msj_asesor_uno += '(https://gt.mipagoclaro.com/), Mi Claro Express (https://paquetes.miclaro.com.gt/)';
-    msj_asesor_uno += 'Menú Digital (http://bit.ly/ClaroMenuDigital) y consultas de saldos de facturas enviando';
-    msj_asesor_uno += 'tu número de teléfono por mensaje de texto a la marcación 147100.';
-    msj_asesor_uno += '¡Claro que sí!';
-
-var msj_asesor_dos = "👋 Te damos la bienvenida a la GigaRed Claro, nuestro compromiso es mantenerte conectado.😊 $cr $cr ";
-    msj_asesor_dos += "Ingresa el número de la opción con la que necesitas apoyo: $cr $cr ";
-    msj_asesor_dos += "1. Adquirir un plan nuevo, información de promociones o renovar mi servicio $cr ";
-    msj_asesor_dos += "2. Gestiones y soporte de mis servicios actuales $cr ";
+var msj_asesor_uno = "👋 Te damos la bienvenida a la GigaRed Claro, nuestro compromiso es mantenerte conectado.😊 $cr $cr ";
+    msj_asesor_uno += "Ingresa el número de la opción con la que necesitas apoyo: $cr $cr ";
+    msj_asesor_uno += "1. Adquirir un plan nuevo, información de promociones o renovar mi servicio $cr ";
+    msj_asesor_uno += "2. Gestiones y soporte de mis servicios actuales $cr ";
 
 var palabras = {
   "club": {
@@ -88,8 +78,7 @@ var palabras = {
       "type": "text",
       "accion" : "continue",
       "queue" : "",
-      "mensaje" : msj_asesor_uno,      
-      "mensaje_dos" : msj_asesor_dos,
+      "mensaje" : msj_asesor_uno,
       "mediaURL" : ""
   }  
 }
@@ -99,15 +88,14 @@ var menu_opciones =
   "1": {
       "accion" : "transfer",
       "queue" : cola_opc1,
-      "mensaje" : "En un momento mas uno de nuestros asesores lo atenderá"
+      "mensaje" : "En un momento mas uno de nuestros asesores te atenderá"
   },
   "2": {
       "accion" : "transfer",
       "queue" : cola_opc2,
-      "mensaje" : "En un momento mas uno de nuestros asesores lo atenderá"
+      "mensaje" : "En un momento mas uno de nuestros asesores te atenderá"
   }
 }
-
 
 var palabras_buscar = [
   "club",
@@ -122,18 +110,18 @@ var palabras_buscar = [
   "asesor",
 ]
 
-var mensaje_df = "¡Hola! $cr Soy tu asistente virtual 🤖 de Claro $cr Te puedo ayudar con las siguientes opciones: $cr "
-  mensaje_df +="Envía *cotizar* para conocer nuestros planes móviles y residenciales. 😎 $cr "
-  mensaje_df +="Envía *precio* para ver el catálogo de celulares prepago por marca. 📱 $cr ";  
-  mensaje_df +="Envía *recarga* para hacer una recarga. $cr ";
-  mensaje_df +="Envía *paquete* para comprar un paquete. $cr ";
-  mensaje_df +="Envía *pagar* para ver el saldo, fecha de vencimiento y pagar tu factura móvil y residencial. 💳 $cr ";
-  mensaje_df +="Envía *factura* para conocer tus opciones en consulta de facturas. (Monto y fecha de vencimiento) 📥 $cr ";
-  mensaje_df +="Envía *configuración* para conocer los pasos a seguir si tienes inconvenientes con tu navegación 📱. $cr ";
-  mensaje_df +="Envía *soporte* si presentas inconvenientes con tu router de tu internet residencial. ☎📺🖥 $cr ";
-  mensaje_df +="Envía *club* para conocer los establecimientos con promociones especiales solo por ser cliente Claro. 😎 💰 $cr ";
-  mensaje_df +="Envía *asesor* si aún deseas ser atendido por uno de nuestros agentes de servicio al cliente o ventas. 👩💻👨💻 $cr ";
-
+var mensaje_df = "¡Hola! $cr Soy tu asistente virtual 🤖 de Claro $cr Te puedo ayudar con las siguientes opciones: $cr $cr "
+  mensaje_df +="➡️ Envía *cotizar* para conocer nuestros planes móviles y residenciales. 😎 $cr $cr "
+  mensaje_df +="➡️ Envía *precio* para ver el catálogo de celulares prepago por marca. 📱 $cr $cr ";  
+  mensaje_df +="➡️ Envía *recarga* para hacer una recarga. $cr $cr ";
+  mensaje_df +="➡️ Envía *paquete* para comprar un paquete. $cr $cr ";
+  mensaje_df +="➡️ Envía *pagar* para ver el saldo, fecha de vencimiento y pagar tu factura móvil y residencial. 💳 $cr $cr ";
+  mensaje_df +="➡️ Envía *factura* para conocer tus opciones en consulta de facturas. (Monto y fecha de vencimiento) 📥 $cr $cr ";
+  mensaje_df +="➡️ Envía *configuración* para conocer los pasos a seguir si tienes inconvenientes con tu navegación 📱. $cr $cr ";
+  mensaje_df +="➡️ Envía *soporte* si presentas inconvenientes con tu router de tu internet residencial. ☎📺🖥 $cr $cr ";
+  mensaje_df +="➡️ Envía *club* para conocer los establecimientos con promociones especiales solo por ser cliente Claro. 😎 💰 $cr $cr ";
+  mensaje_df +="➡️ Envía *asesor* si aún deseas ser atendido por uno de nuestros agentes de servicio al cliente o ventas. 👩💻👨💻 $cr $cr ";
+  
 var msj_default = {
   "accion": "continue",
   "mensaje" : mensaje_df
@@ -141,7 +129,6 @@ var msj_default = {
 var messaje_def_opdos = "Pedimos tu comprensión por los tiempos de espera. Puedes utilizar, sin costo alguno, nuestros canales digitales de autogestión: Mi Pago Claro (https://gt.mipagoclaro.com/), Mi Claro Express (https://paquetes.miclaro.com.gt/) Menú Digital (http://bit.ly/ClaroMenuDigital) y consultas de saldos de facturas enviando tu número de teléfono por mensaje de texto a la marcación 147100. ¡Claro que sí!";
 
 var msj_asesor = ""
-
 
 var bandera_log = true;
 
