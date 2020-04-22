@@ -88,12 +88,12 @@ var menu_opciones =
   "1": {
       "accion" : "transfer",
       "queue" : cola_opc1,
-      "mensaje" : "En un momento mas uno de nuestros asesores te atenderá"
+      "mensaje" : ""//En un momento mas uno de nuestros asesores te atenderá"
   },
   "2": {
       "accion" : "transfer",
       "queue" : cola_opc2,
-      "mensaje" : "En un momento mas uno de nuestros asesores te atenderá"
+      "mensaje" : ""//"En un momento mas uno de nuestros asesores te atenderá"
   }
 }
 
