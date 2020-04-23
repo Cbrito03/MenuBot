@@ -69,160 +69,160 @@ app.post('/message', (req, res) => {
   var user = req.body.user;
   var context = req.body.context;
   var cadena = req.body.message;
-  var bandera_asesor = false;
+  var bandera_opc = false;
 
   log_file.write(util.format('*********************************'+config.fecha_actual+' '+config.hora_actual+'*********************************')+'\n');
   
-  if(apiVersion !== '' && typeof apiVersion !== "undefined") 
-  {
-    if(authToken !== '' && typeof authToken !== "undefined") 
-    {
-      if(channel !== '' && typeof channel !== "undefined") 
-      {
-        if(user !== '' && typeof user !== "undefined") 
-        {
-          if(context !== '' && typeof context !== "undefined") 
-          {
-            if(cadena !== '' && typeof cadena !== "undefined") 
-            {
-              cadena = cadena.text.toLowerCase(); // minusculas
-              cadena = cadena.trim();
-              msj_buscar_opcion = cadena;
-              cadena = cadena.replace(/,/g,"").replace(/;/g,"").replace(/:/g,"").replace(/\./g,""); // borramos ,;.:
-              cadena = cadena.split(" "); // lo convertimo en array mediante los espacios
+	if(apiVersion !== '' && typeof apiVersion !== "undefined") 
+	{
+		if(authToken !== '' && typeof authToken !== "undefined") 
+		{
+			if(channel !== '' && typeof channel !== "undefined") 
+			{
+				if(user !== '' && typeof user !== "undefined") 
+				{
+					if(context !== '' && typeof context !== "undefined") 
+					{
+						if(cadena !== '' && typeof cadena !== "undefined") 
+						{
+							cadena = cadena.text.toLowerCase(); // minusculas
+							cadena = cadena.trim();
+							msj_buscar_opcion = cadena;
+							cadena = cadena.replace(/,/g,"").replace(/;/g,"").replace(/:/g,"").replace(/\./g,""); // borramos ,;.:
+							cadena = cadena.split(" "); // lo convertimo en array mediante los espacios
 
-              for(var i = 0; i < cadena.length; i++)
-              {
-                for(var atr in palabras)
-                {
-                  if(cadena[i] === "configuración"){ cadena[i] = 'configuracion'}
-                 
-                  if(atr.toLowerCase() === cadena[i])
-                  {
-                    msj_buscar = cadena[i];
+							for(var i = 0; i < cadena.length; i++)
+							{
+								for(var atr in palabras)
+								{
+									if(cadena[i] === "configuración"){ cadena[i] = 'configuracion'}
 
-                    result = palabras[atr];                    
+									if(atr.toLowerCase() === cadena[i])
+									{
+										msj_buscar = cadena[i];
 
-                    bandera = true;
+										result = palabras[atr];                    
 
-                    break;
-                  }
-                }      
-                if(bandera){ break; }
-              }
+										bandera = true;
 
-              console.log("[msj_buscar_opcion]"+msj_buscar_opcion);
+										break;
+									}
+								}      
+								if(bandera){ break; }
+							}
 
-              if(localStorage.getItem("msj_"+conversationID) == null) // No existe
-              {
-                console.log('Crea Storage :: ' + localStorage.getItem("msj_"+conversationID));
+							console.log("[msj_buscar_opcion]"+msj_buscar_opcion);
 
-                if(msj_buscar == "configuracion" || msj_buscar == "soporte")
-                {
-                  localStorage.setItem("msj_"+conversationID, msj_buscar);
-                  //console.log("Se Creo para "+ msj_buscar +" :: " + localStorage.getItem("msj_"+conversationID));
-                }
-                else if(msj_buscar == "asesor")
-                {
-                  localStorage.setItem("msj_"+conversationID, msj_buscar);
-                  //console.log("Se Creo para "+ msj_buscar +" :: " + localStorage.getItem("msj_"+conversationID));
-                }             
-              }
-              else // esite localStorage
-              {
-                console.log('Borra Storage :: ' + localStorage.getItem("msj_"+conversationID));
+							if(localStorage.getItem("msj_"+conversationID) == null) // No existe
+							{
+								console.log('Crea Storage :: ' + localStorage.getItem("msj_"+conversationID));
 
-                if((localStorage.getItem("msj_"+conversationID) == "configuracion" || localStorage.getItem("msj_"+conversationID) == "soporte") && msj_buscar == "asesor")
-                {
-                  //console.log("Se Elimina Storage del menu de confi y soporte :: " + localStorage.getItem("msj_"+conversationID));
-                  localStorage.removeItem("msj_"+conversationID);
-                  result = menu_opciones["2"];
+								if(msj_buscar == "configuracion" || msj_buscar == "soporte")
+								{
+									localStorage.setItem("msj_"+conversationID, msj_buscar);
+									//console.log("Se Creo para "+ msj_buscar +" :: " + localStorage.getItem("msj_"+conversationID));
+								}
+								else if(msj_buscar == "asesor")
+								{
+									localStorage.setItem("msj_"+conversationID, msj_buscar);
+									//console.log("Se Creo para "+ msj_buscar +" :: " + localStorage.getItem("msj_"+conversationID));
+								}             
+							}
+							else // esite localStorage
+							{
+								console.log('Borra Storage :: ' + localStorage.getItem("msj_"+conversationID));
 
-                }
-                else if((msj_buscar_opcion == "1" || msj_buscar_opcion == "2") && localStorage.getItem("msj_"+conversationID) == "asesor")
-                {
-                  //console.log("Se Elimina Storage del menu del asesor :: " + localStorage.getItem("msj_"+conversationID));
-                  localStorage.removeItem("msj_"+conversationID);
-                  result = menu_opciones[msj_buscar_opcion];
-                  bandera = true;
-                }
-              }              
+								if((localStorage.getItem("msj_"+conversationID) == "configuracion" || localStorage.getItem("msj_"+conversationID) == "soporte") && msj_buscar == "asesor")
+								{
+									//console.log("Se Elimina Storage del menu de confi y soporte :: " + localStorage.getItem("msj_"+conversationID));
+									localStorage.removeItem("msj_"+conversationID);
+									result = menu_opciones["2"];
+									bandera_opc = true;
+								}
+								else if((msj_buscar_opcion == "1" || msj_buscar_opcion == "2") && localStorage.getItem("msj_"+conversationID) == "asesor")
+								{
+									//console.log("Se Elimina Storage del menu del asesor :: " + localStorage.getItem("msj_"+conversationID));
+									localStorage.removeItem("msj_"+conversationID);
+									result = menu_opciones[msj_buscar_opcion];
+									bandera = true;
+									bandera_opc = true;
+								}
+							}               
 
-              if(!bandera){ result = msj_dafault;}
+							if(!bandera){ result = msj_dafault;}
 
-              estatus = 200;
+              				estatus = 200;
 
-              resultado = {
-                "context":{
-                  "agent":false,
-                  "callback":false,
-                  "video":false
-                },
-                "action":{
-                  "type": result.accion,// "type":"continue"
-                  "queue": result.queue
-                },
-                "messages":[
-                  {
-                    "type": result.type,
-                    "text": result.mensaje,
-                    "mediaURL": result.mediaURL
-                  }
-                ],
-                "additionalInfo": {
-                  "key":"RUT",
-                  "RUT":"1-9"
-                }
-              }              
-            }
-            else
-            {
-              estatus = 400;
-              resultado = {
-                "estado": "El valor de mensaje es requerido"
-              }
-            } 
-          }
-          else
-          {
-            estatus = 400;
-            resultado = {
-              "estado": "El valor de contexto es requerido"
-            }
-          } 
-        }
-        else
-        {
-          estatus = 400;
-          resultado = {
-            "estado": "El valor de user es requerido"
-          }
-        } 
-        
-      }
-      else
-      {
-        estatus = 400;
-        resultado = {
-          "estado": "El valor de channel es requerido"
-        }
-      } 
-    }
-    else
-    {
-      estatus = 400;
-      resultado = {
-        "estado": "El valor de authToken es requerido"
-      }
-    }
-  }
-  else
-  {
-    estatus = 400;
-    resultado = {
-      "estado": "El valor de apiVersion es requerido"
-    }
-  }
+				            resultado = {
+				                "context":{
+									"agent":false,
+									"callback":false,
+									"video":false
+				                },
+				                "action":{
+									"type": result.accion,// "type":"continue"
+									"queue": result.queue
+				                },
+				                "messages":[{
+									"type": result.type,
+									"text": result.mensaje,
+									"mediaURL": result.mediaURL
+								}],
+				                "additionalInfo": {
+									"key":"RUT",
+									"RUT":"1-9"
+				                }
+				            };
+
+				            if(bandera_opc){	resultado.messages = [];	}
+            			}
+           		 		else
+			            {
+			              estatus = 400;
+			              resultado = {
+			                "estado": "El valor de mensaje es requerido"
+			              }
+			            } 
+					}
+					else
+					{
+						estatus = 400;
+						resultado = {
+							"estado": "El valor de contexto es requerido"
+						}
+					} 
+				}
+				else
+				{
+					estatus = 400;
+					resultado = {
+						"estado": "El valor de user es requerido"
+					}
+				}        
+			}
+			else
+			{
+				estatus = 400;
+				resultado = {
+					"estado": "El valor de channel es requerido"
+				}
+			} 
+		}
+		else
+		{
+			estatus = 400;
+			resultado = {
+				"estado": "El valor de authToken es requerido"
+			}
+		}
+	}
+	else
+	{
+		estatus = 400;
+		resultado = {
+			"estado": "El valor de apiVersion es requerido"
+		}
+	}
 
   log_file.write(util.format('[FECHA] : '+config.fecha_actual+' - [HORA] : '+config.hora_actual+' - [conversationID] : '+conversationID+' - [Accion] : /message \n [STATUS] : '+estatus+' - [Resultado] : ')+'\n');
   log_file.write(util.format(resultado));
