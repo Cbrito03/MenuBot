@@ -20,9 +20,10 @@ var palabras = {
   },
   "cotizar": {
       "type": "text",
-      "accion" : "continue",
-      "queue" : "",
-      "mensaje" : "Ingresa al siguiente link http://bit.ly/TelemarketingClaro y unos de nuestros asesores se comunicará contigo de inmediato para que puedas cotizar nuestros planes móviles y residenciales de acuerdo a tus necesidades. 🤓",
+      "accion" : "transfer",//"continue",
+      "queue" : cola_opc1,
+      "mensaje" : "En un momento serás atendido por uno de nuestros asesores 🤓 💻",
+      //"mensaje" : "Ingresa al siguiente link http://bit.ly/TelemarketingClaro y unos de nuestros asesores se comunicará contigo de inmediato para que puedas cotizar nuestros planes móviles y residenciales de acuerdo a tus necesidades. 🤓",
       "mediaURL" : ""
   },
   "precio": {
