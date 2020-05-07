@@ -6,13 +6,12 @@ var cola_opc_1_2 = "GT_WA_Ventas_FI";
 //var cola_opc2 = "WhatsappSM";
 var cola_opc2 = "GT_Wa_Movil";
 
-
 var msj_asesor_uno = "👋 Te damos la bienvenida a la GigaRed Claro, nuestro compromiso es mantenerte conectado.😊 $cr $cr ";
     msj_asesor_uno += "Ingresa el número de la opción con la que necesitas apoyo: $cr $cr ";
     msj_asesor_uno += "1. Adquirir un plan nuevo, información de promociones o renovar mi servicio $cr ";
     msj_asesor_uno += "2. Gestiones y soporte de mis servicios actuales $cr ";
 
-var msj_opcion_uno = "Hola Bienvenido a nuestro servicio de ventas Claro. $cr $cr ";
+var msj_opcion_uno = "¡Hola!🤗 Bienvenido a nuestro servicio de ventas Claro $cr $cr ";
     msj_opcion_uno += "Por favor ingresa el número de la opción con la que necesitas apoyo: $cr $cr ";
     msj_opcion_uno += "1. Servicios Móviles $cr ";
     msj_opcion_uno += "2. Servicios Fijos $cr ";
@@ -27,10 +26,9 @@ var palabras = {
   },
   "cotizar": {
       "type": "text",
-      "accion" : "transfer",//"continue",
-      "queue" : cola_opc1,
-      "mensaje" : "En un momento serás atendido por uno de nuestros asesores 🤓 💻",
-      //"mensaje" : "Ingresa al siguiente link http://bit.ly/TelemarketingClaro y unos de nuestros asesores se comunicará contigo de inmediato para que puedas cotizar nuestros planes móviles y residenciales de acuerdo a tus necesidades. 🤓",
+      "accion" : "continue",
+      "queue" : "",
+      "mensaje" : msj_opcion_uno,
       "mediaURL" : ""
   },
   "precio": {

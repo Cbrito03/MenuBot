@@ -90,12 +90,19 @@ app.post('/message', (req, res) => {
 
 								if(msj_buscar == "configuracion" || msj_buscar == "soporte")
 								{
+									console.log("[Brito] :: [message] :: [Se crea LocalStrogae para configuracion y soporte] :: " + msj_buscar);
 									localStorage.setItem("msj_"+conversationID, msj_buscar);
 								}
 								else if(msj_buscar == "asesor")
 								{
+									console.log("[Brito] :: [message] :: [Se crea LocalStrogae para asesor] :: " + msj_buscar);
 									localStorage.setItem("msj_"+conversationID, msj_buscar);
-								}             
+								}
+								else if(msj_buscar == "cotizar")
+								{
+									console.log("[Brito] :: [message] :: [Se crea LocalStrogae para Cotizar] :: " + msj_buscar);
+									localStorage.setItem("msj_"+conversationID, msj_buscar);
+								}            
 							}
 							else // esite localStorage
 							{
@@ -128,6 +135,14 @@ app.post('/message', (req, res) => {
 										bandera = true;										
 									}									
 								}
+								else if((msj_buscar_opcion == "1" || msj_buscar_opcion == "2") && localStorage.getItem("msj_"+conversationID) == "cotizar")
+								{
+									console.log("[Brito] :: [message] :: [Entro a cotizar] :: " + msj_buscar_opcion + " :: " + localStorage.getItem("msj_"+conversationID));
+									localStorage.removeItem("msj_"+conversationID);
+									result = menu_opciones_2[msj_buscar_opcion];
+									bandera = true;
+																		
+								}
 								else if((msj_buscar_opcion == "1" || msj_buscar_opcion == "2") && localStorage.getItem("msj_"+conversationID) == "opcion_1_1")
 								{
 									console.log("[Brito] :: [message] :: [Else IF opcion] :: " + msj_buscar_opcion+ " :: [localStorage] .: " + localStorage.getItem("msj_"+conversationID));
@@ -135,7 +150,7 @@ app.post('/message', (req, res) => {
 									result = menu_opciones_2[msj_buscar_opcion];
 									bandera = true;
 								}
-								else if (!isNaN(y) && (localStorage.getItem("msj_"+conversationID) == "asesor" || localStorage.getItem("msj_"+conversationID) == "opcion_1_1"))
+								else if (!isNaN(y) && (localStorage.getItem("msj_"+conversationID) == "asesor" || localStorage.getItem("msj_"+conversationID) == "cotizar" || localStorage.getItem("msj_"+conversationID) == "opcion_1_1"))
 				                {
 				                	if(localStorage.getItem("msj_"+conversationID) == "asesor")
 				                	{
@@ -147,6 +162,12 @@ app.post('/message', (req, res) => {
 				                	{
 				                		console.log("[Brito] :: [No es el número correcto para el menu de Opciín 1] :: [Número de opción] :: " + y);
 										result = menu_opciones["1"];
+										bandera = true;
+				                	}
+				                	else if(localStorage.getItem("msj_"+conversationID) == "cotizar")
+				                	{
+				                		console.log("[Brito] :: [No es el número correcto para el menu de Cotizar] :: [Número de opción] :: " + y);
+										result = palabras['cotizar'];
 										bandera = true;
 				                	}
 				                }
