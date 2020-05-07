@@ -1,4 +1,3 @@
-// Modifico Carlos Brito 18-04-2020 12:37 AM
 var express = require('express')
 var http = require('http')
 var app = express()
@@ -10,13 +9,10 @@ let fs = require('fs');
 var util = require('util');
 var config = require('./config.js');
 var port = 8080;
-var log_file = "";
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(bodyParser.json());
-
-//app.use( express.static( "public" ) );
 
 app.use(express.static('img'));
 
@@ -28,50 +24,25 @@ app.use((req, res, next) => {
     next();
 });
 
-if(config.bandera_log)
-{
-  config.obtener_fecha();
-  
-  fs.open(__dirname + '/logs/node_' + config.fecha_actual + '.log', 'a+', (err, fd) => { //wx verifica si existe el archivo
-    if (err)
-    {
-      if (err.code === 'EEXIST')
-      {
-        log_file = fs.createWriteStream(__dirname + '/logs/node_'+config.fecha_actual+'.log', {flags : 'a'});
-      }
-      throw err;
-      writeMyData(fd);
-    }
-    else
-    {
-      log_file = fs.createWriteStream(__dirname + '/logs/node_'+config.fecha_actual+'.log', {flags : 'a'});
-    }
-  });
-}
-
 var palabras = config.palabras;
-var palabras_buscar = config.palabras_buscar; // no se utiliza 
 var msj_dafault = config.msj_default;
 var menu_opciones = config.menu_opciones;
+var menu_opciones_2 = config.menu_opciones_2
 
 app.post('/message', (req, res) => {
-  config.obtener_fecha();
-  console.log("Peticion POST /message [FECHA-HORA] : "+config.fecha_actual+" "+config.hora_actual);  
-  var result, resultado;
-  var bandera = false , estatus = 200 , menu_dos = 0;
-  var msj_buscar = "", msj_buscar_opcion = "";
+	config.obtener_fecha();
+	console.log("Peticion POST /message [FECHA-HORA] : "+config.fecha_actual+" "+config.hora_actual);  
+	var result, resultado;
+	var bandera = false , estatus = 200;
+	var msj_buscar = "", msj_buscar_opcion = "";
 
-  var apiVersion = req.body.apiVersion;
-  var conversationID = req.body.conversationId;
-  var authToken = req.body.authToken;
-  //var RRSS = req.body.RRSS;
-  var channel = req.body.channel;
-  var user = req.body.user;
-  var context = req.body.context;
-  var cadena = req.body.message;
-  var bandera_opc = false;
-
-  log_file.write(util.format('*********************************'+config.fecha_actual+' '+config.hora_actual+'*********************************')+'\n');
+	var apiVersion = req.body.apiVersion;
+	var conversationID = req.body.conversationId;
+	var authToken = req.body.authToken;
+	var channel = req.body.channel;
+	var user = req.body.user;
+	var context = req.body.context;
+	var cadena = req.body.message;
   
 	if(apiVersion !== '' && typeof apiVersion !== "undefined") 
 	{
@@ -111,7 +82,7 @@ app.post('/message', (req, res) => {
 								if(bandera){ break; }
 							}
 
-							console.log("[msj_buscar_opcion]"+msj_buscar_opcion);
+							console.log("[Brito] :: [message] :: [msj_buscar_opcion] :: " + msj_buscar_opcion);
 
 							if(localStorage.getItem("msj_"+conversationID) == null) // No existe
 							{
@@ -120,36 +91,68 @@ app.post('/message', (req, res) => {
 								if(msj_buscar == "configuracion" || msj_buscar == "soporte")
 								{
 									localStorage.setItem("msj_"+conversationID, msj_buscar);
-									//console.log("Se Creo para "+ msj_buscar +" :: " + localStorage.getItem("msj_"+conversationID));
 								}
 								else if(msj_buscar == "asesor")
 								{
 									localStorage.setItem("msj_"+conversationID, msj_buscar);
-									//console.log("Se Creo para "+ msj_buscar +" :: " + localStorage.getItem("msj_"+conversationID));
 								}             
 							}
 							else // esite localStorage
 							{
-								console.log('Borra Storage :: ' + localStorage.getItem("msj_"+conversationID));
+								console.log('[Brito] :: [message] :: [Borra Storage] :: ' + localStorage.getItem("msj_"+conversationID));
+
+								var y = parseInt(msj_buscar_opcion);  
 
 								if((localStorage.getItem("msj_"+conversationID) == "configuracion" || localStorage.getItem("msj_"+conversationID) == "soporte") && msj_buscar == "asesor")
 								{
-									//console.log("Se Elimina Storage del menu de confi y soporte :: " + localStorage.getItem("msj_"+conversationID));
 									localStorage.removeItem("msj_"+conversationID);
 									result = menu_opciones["2"];
-									bandera_opc = true;
+									bandera = true;
 								}
 								else if((msj_buscar_opcion == "1" || msj_buscar_opcion == "2") && localStorage.getItem("msj_"+conversationID) == "asesor")
 								{
-									//console.log("Se Elimina Storage del menu del asesor :: " + localStorage.getItem("msj_"+conversationID));
-									localStorage.removeItem("msj_"+conversationID);
-									result = menu_opciones[msj_buscar_opcion];
-									bandera = true;
-									bandera_opc = true;
+									if(msj_buscar_opcion == "1")
+									{
+										console.log("[Brito] :: [message] :: [IF] :: " + msj_buscar_opcion);
+										localStorage.removeItem("msj_"+conversationID);
+										localStorage.setItem("msj_"+conversationID, 'opcion_1_1');
+
+										result = menu_opciones[msj_buscar_opcion];
+										bandera = true;
+									}
+									else if(msj_buscar_opcion == "2")
+									{
+										console.log("[Brito] :: [message] :: [Else] :: " + msj_buscar_opcion);
+										localStorage.removeItem("msj_"+conversationID);
+										result = menu_opciones[msj_buscar_opcion];
+										bandera = true;										
+									}									
 								}
+								else if((msj_buscar_opcion == "1" || msj_buscar_opcion == "2") && localStorage.getItem("msj_"+conversationID) == "opcion_1_1")
+								{
+									console.log("[Brito] :: [message] :: [Else IF opcion] :: " + msj_buscar_opcion+ " :: [localStorage] .: " + localStorage.getItem("msj_"+conversationID));
+									localStorage.removeItem("msj_"+conversationID);
+									result = menu_opciones_2[msj_buscar_opcion];
+									bandera = true;
+								}
+								else if (!isNaN(y) && (localStorage.getItem("msj_"+conversationID) == "asesor" || localStorage.getItem("msj_"+conversationID) == "opcion_1_1"))
+				                {
+				                	if(localStorage.getItem("msj_"+conversationID) == "asesor")
+				                	{
+				                		console.log("[Brito] :: [No es el número correcto para el menu de asesor] :: [Número de opción] :: " + y);
+										result = palabras['asesor'];
+										bandera = true;
+				                	}
+				                	else if(localStorage.getItem("msj_"+conversationID) == "opcion_1_1")
+				                	{
+				                		console.log("[Brito] :: [No es el número correcto para el menu de Opciín 1] :: [Número de opción] :: " + y);
+										result = menu_opciones["1"];
+										bandera = true;
+				                	}
+				                }
 							}               
 
-							if(!bandera){ result = msj_dafault;}
+							if(!bandera){ result = msj_dafault; localStorage.removeItem("msj_"+conversationID);}
 
               				estatus = 200;
 
@@ -174,7 +177,9 @@ app.post('/message', (req, res) => {
 				                }
 				            };
 
-				            if(bandera_opc){	resultado.messages = [];	}
+				            if( result.mensaje === ""){resultado.messages = [];}
+
+				            console.log("[Brito] :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: [Brito]");
             			}
            		 		else
 			            {
@@ -224,15 +229,7 @@ app.post('/message', (req, res) => {
 		}
 	}
 
-  log_file.write(util.format('[FECHA] : '+config.fecha_actual+' - [HORA] : '+config.hora_actual+' - [conversationID] : '+conversationID+' - [Accion] : /message \n [STATUS] : '+estatus+' - [Resultado] : ')+'\n');
-  log_file.write(util.format(resultado));
-  log_file.write('\n');
-  log_file.write("****************************[DATOS DE ENTRADA]****************************");
-  log_file.write('\n');
-  log_file.write("[apiVersion] : " + apiVersion + " \t [conversationID] : " + conversationID + " \t [authToken] :  " + authToken + "\t [channel] : " + channel);
-  log_file.write('\n \n');
-
-  res.status(estatus).json(resultado);
+ 	res.status(estatus).json(resultado);
 })
 
 app.post('/terminate', (req, res) => {
@@ -287,7 +284,9 @@ app.get('/:img', function(req, res){
 }); 
 
 app.get('/', (req, res) => {
-  res.status(200).send("Bienvenido al menú Bot, las opciones disponibles son: <br> /message<br> /terminate")
+	var respuesta = "Bienvenido al menú Bot de Guatemala, las opciones disponibles son: <br> /message<br> /terminate <br> ";
+	respuesta += "Versión: 3.0.0 <br>";
+	res.status(200).send(respuesta);
 })
 
 http.createServer(app).listen(port, () => {

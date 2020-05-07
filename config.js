@@ -1,14 +1,21 @@
-// Modifico Carlos Brito 18-04-2020 12:37 AM
 //var cola_opc1 = "WhatsappTest";
 var cola_opc1 = "GT_Wa_Ventas";
+var cola_opc_1_1 = "GT_WA_Ventas_MO";
+var cola_opc_1_2 = "GT_WA_Ventas_FI";
 
 //var cola_opc2 = "WhatsappSM";
 var cola_opc2 = "GT_Wa_Movil";
+
 
 var msj_asesor_uno = "👋 Te damos la bienvenida a la GigaRed Claro, nuestro compromiso es mantenerte conectado.😊 $cr $cr ";
     msj_asesor_uno += "Ingresa el número de la opción con la que necesitas apoyo: $cr $cr ";
     msj_asesor_uno += "1. Adquirir un plan nuevo, información de promociones o renovar mi servicio $cr ";
     msj_asesor_uno += "2. Gestiones y soporte de mis servicios actuales $cr ";
+
+var msj_opcion_uno = "Hola Bienvenido a nuestro servicio de ventas Claro. $cr $cr ";
+    msj_opcion_uno += "Por favor ingresa el número de la opción con la que necesitas apoyo: $cr $cr ";
+    msj_opcion_uno += "1. Servicios Móviles $cr ";
+    msj_opcion_uno += "2. Servicios Fijos $cr ";
 
 var palabras = {
   "club": {
@@ -87,9 +94,11 @@ var palabras = {
 var menu_opciones = 
 {
   "1": {
-      "accion" : "transfer",
-      "queue" : cola_opc1,
-      "mensaje" : ""//En un momento mas uno de nuestros asesores te atenderá"
+      "type": "text",
+      "accion" : "continue", 
+      "queue" : "",
+      "mensaje" : msj_opcion_uno,
+      "mediaURL" : ""
   },
   "2": {
       "accion" : "transfer",
@@ -98,18 +107,19 @@ var menu_opciones =
   }
 }
 
-var palabras_buscar = [
-  "club",
-  "cotizar",
-  "Precio",
-  "Recarga",
-  "Paquete",
-  "Pagar",
-  "Factura",
-  "Configuracion",
-  "Soporte",
-  "asesor",
-]
+var menu_opciones_2 = 
+{
+  "1": {
+      "accion" : "transfer",
+      "queue" : cola_opc_1_1,
+      "mensaje" : ""
+  },
+  "2": {
+      "accion" : "transfer",
+      "queue" : cola_opc_1_2,
+      "mensaje" : ""//"En un momento mas uno de nuestros asesores te atenderá"
+  }
+}
 
 var mensaje_df = "¡Hola! $cr Soy tu asistente virtual 🤖 de Claro $cr Te puedo ayudar con las siguientes opciones: $cr $cr "
     mensaje_df +="➡️ Envía *cotizar* para conocer nuestros planes móviles y residenciales. 😎 $cr $cr "
@@ -123,7 +133,8 @@ var mensaje_df = "¡Hola! $cr Soy tu asistente virtual 🤖 de Claro $cr Te pued
     mensaje_df +="➡️ Envía *club* para conocer los establecimientos con promociones especiales solo por ser cliente Claro. 😎 💰 $cr $cr ";
     mensaje_df +="➡️ Envía *asesor* si aún deseas ser atendido por uno de nuestros agentes de servicio al cliente o ventas. 👩💻👨💻 $cr $cr ";
   
-var msj_default = {
+var msj_default = 
+{
   "accion": "continue",
   "mensaje" : mensaje_df
 }
@@ -163,9 +174,9 @@ obtener_fecha = function()
 
 exports.palabras = palabras;
 
-exports.palabras_buscar = palabras_buscar;
-
 exports.menu_opciones = menu_opciones;
+
+exports.menu_opciones_2 = menu_opciones_2;
 
 exports.msj_default = msj_default;
 
