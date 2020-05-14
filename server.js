@@ -8,6 +8,7 @@ var localStorage = require('localStorage')
 let fs = require('fs');
 var util = require('util');
 var config = require('./config.js');
+var horario = require('./controllers/validar_horario.js');
 var port = 8080;
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -27,11 +28,19 @@ app.use((req, res, next) => {
 var palabras = config.palabras;
 var msj_dafault = config.msj_default;
 var menu_opciones = config.menu_opciones;
-var menu_opciones_2 = config.menu_opciones_2
+var menu_opciones_2 = config.menu_opciones_2;
+var mjs_horario = config.mjs_horario;
+var contenedor = config.contenedor;
 
 app.post('/message', (req, res) => {
 	config.obtener_fecha();
-	console.log("Peticion POST /message [FECHA-HORA] : "+config.fecha_actual+" "+config.hora_actual);  
+
+	console.log("[Brito] :: [Peticion POST HN /message] :: [FECHA Actual] :: "+config.fecha_actual+" :: [Hora Actual] :: "+config.hora_actual);
+	
+	var horarios = horario.validarHorario(config.OPEN_HOUR, config.OPEN_MINUTE, config.CLOSE_HOUR, config.CLOSE_MINUTE);
+
+	console.log("[Brito] :: [message] :: [Respuesta de Horario] :: " + horarios);
+
 	var result, resultado;
 	var bandera = false , estatus = 200;
 	var msj_buscar = "", msj_buscar_opcion = "";
@@ -88,7 +97,7 @@ app.post('/message', (req, res) => {
 							{
 								console.log('Crea Storage :: ' + localStorage.getItem("msj_"+conversationID));
 
-								if(msj_buscar == "configuracion" || msj_buscar == "soporte")
+								if(msj_buscar == "configuracion" /*|| msj_buscar == "soporte"*/)
 								{
 									console.log("[Brito] :: [message] :: [Se crea LocalStrogae para configuracion y soporte] :: " + msj_buscar);
 									localStorage.setItem("msj_"+conversationID, msj_buscar);
@@ -110,44 +119,94 @@ app.post('/message', (req, res) => {
 
 								var y = parseInt(msj_buscar_opcion);  
 
-								if((localStorage.getItem("msj_"+conversationID) == "configuracion" || localStorage.getItem("msj_"+conversationID) == "soporte") && msj_buscar == "asesor")
+								if(/*(*/localStorage.getItem("msj_"+conversationID) == "configuracion" /*|| localStorage.getItem("msj_"+conversationID) == "soporte")*/ && msj_buscar == "asesor")
 								{
-									localStorage.removeItem("msj_"+conversationID);
-									result = menu_opciones["2"];
-									bandera = true;
+									if(horarios)
+									{
+										localStorage.removeItem("msj_"+conversationID);
+										result = menu_opciones["2"];
+										bandera = true;
+									}
+									else
+									{
+										console.log("[Brito] :: [No cumple horario habil para Configuración en Asesor] :: [horarios] :: "+horarios);
+				                        
+				                        contenedor.type = "text";
+				                        contenedor.accion = "end";
+				                        contenedor.queue = "";
+				                        contenedor.mensaje = mjs_horario;
+				                        result = contenedor;
+				                        bandera = true;
+									}									
 								}
 								else if((msj_buscar_opcion == "1" || msj_buscar_opcion == "2") && localStorage.getItem("msj_"+conversationID) == "asesor")
 								{
+									localStorage.removeItem("msj_"+conversationID);
+
 									if(msj_buscar_opcion == "1")
 									{
-										console.log("[Brito] :: [message] :: [IF] :: " + msj_buscar_opcion);
-										localStorage.removeItem("msj_"+conversationID);
+										console.log("[Brito] :: [message] :: [IF] :: " + msj_buscar_opcion);										
 										localStorage.setItem("msj_"+conversationID, 'opcion_1_1');
-
-										result = menu_opciones[msj_buscar_opcion];
-										bandera = true;
+										result = menu_opciones[msj_buscar_opcion];										
 									}
 									else if(msj_buscar_opcion == "2")
 									{
 										console.log("[Brito] :: [message] :: [Else] :: " + msj_buscar_opcion);
-										localStorage.removeItem("msj_"+conversationID);
-										result = menu_opciones[msj_buscar_opcion];
-										bandera = true;										
-									}									
+
+										if(horarios)
+										{											
+											result = menu_opciones[msj_buscar_opcion];
+										}
+										else
+										{	
+											console.log("[Brito] :: [No cumple horario habil para Menu_Opciones 2] :: [horarios] :: "+horarios);
+					                        contenedor.type = "text";
+					                        contenedor.accion = "end";
+					                        contenedor.queue = "";
+					                        contenedor.mensaje = mjs_horario;
+					                        result = contenedor;					                        
+										}							
+									}
+									bandera = true;								
 								}
 								else if((msj_buscar_opcion == "1" || msj_buscar_opcion == "2") && localStorage.getItem("msj_"+conversationID) == "cotizar")
 								{
 									console.log("[Brito] :: [message] :: [Entro a cotizar] :: " + msj_buscar_opcion + " :: " + localStorage.getItem("msj_"+conversationID));
 									localStorage.removeItem("msj_"+conversationID);
-									result = menu_opciones_2[msj_buscar_opcion];
-									bandera = true;
-																		
+
+									if(horarios)
+									{
+										result = menu_opciones_2[msj_buscar_opcion];
+									}
+									else
+									{	
+										console.log("[Brito] :: [No cumple horario habil para Menu_Opciones 2] :: [horarios] :: "+horarios);
+				                        contenedor.type = "text";
+				                        contenedor.accion = "end";
+				                        contenedor.queue = "";
+				                        contenedor.mensaje = mjs_horario;
+				                        result = contenedor;				                        
+									}
+									bandera = true;																	
 								}
 								else if((msj_buscar_opcion == "1" || msj_buscar_opcion == "2") && localStorage.getItem("msj_"+conversationID) == "opcion_1_1")
 								{
 									console.log("[Brito] :: [message] :: [Else IF opcion] :: " + msj_buscar_opcion+ " :: [localStorage] .: " + localStorage.getItem("msj_"+conversationID));
 									localStorage.removeItem("msj_"+conversationID);
-									result = menu_opciones_2[msj_buscar_opcion];
+
+									if(horarios)
+									{
+										result = menu_opciones_2[msj_buscar_opcion];										
+									}
+									else
+									{	
+										console.log("[Brito] :: [No cumple horario habil para Menu_Opciones 2] :: [horarios] :: "+horarios);
+				                        contenedor.type = "text";
+				                        contenedor.accion = "end";
+				                        contenedor.queue = "";
+				                        contenedor.mensaje = mjs_horario;
+				                        result = contenedor;
+									}
 									bandera = true;
 								}
 								else if (!isNaN(y) && (localStorage.getItem("msj_"+conversationID) == "asesor" || localStorage.getItem("msj_"+conversationID) == "cotizar" || localStorage.getItem("msj_"+conversationID) == "opcion_1_1"))
@@ -156,24 +215,26 @@ app.post('/message', (req, res) => {
 				                	{
 				                		console.log("[Brito] :: [No es el número correcto para el menu de asesor] :: [Número de opción] :: " + y);
 										result = palabras['asesor'];
-										bandera = true;
 				                	}
 				                	else if(localStorage.getItem("msj_"+conversationID) == "opcion_1_1")
 				                	{
 				                		console.log("[Brito] :: [No es el número correcto para el menu de Opciín 1] :: [Número de opción] :: " + y);
 										result = menu_opciones["1"];
-										bandera = true;
 				                	}
 				                	else if(localStorage.getItem("msj_"+conversationID) == "cotizar")
 				                	{
 				                		console.log("[Brito] :: [No es el número correcto para el menu de Cotizar] :: [Número de opción] :: " + y);
 										result = palabras['cotizar'];
-										bandera = true;
 				                	}
+
+									bandera = true;
+				                }else
+				                {
+				                	localStorage.removeItem("msj_"+conversationID);
 				                }
 							}               
 
-							if(!bandera){ result = msj_dafault; localStorage.removeItem("msj_"+conversationID);}
+							if(!bandera){result = msj_dafault; localStorage.removeItem("msj_"+conversationID);}
 
               				estatus = 200;
 
@@ -305,12 +366,28 @@ app.get('/:img', function(req, res){
 }); 
 
 app.get('/', (req, res) => {
+	const now = new Date();
+
+	var horarios = horario.validarHorario(config.OPEN_HOUR, config.OPEN_MINUTE, config.CLOSE_HOUR, config.CLOSE_MINUTE);
+
+	console.log("[Brito] :: [Raiz] :: [Respuesta de Horario] :: " + horarios);
+
+	// create Date object for current location
+	var d = new Date();
+	var offset = config.offset;
+	var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+	var nd = new Date(utc + (3600000*offset));
+
 	var respuesta = "Bienvenido al menú Bot de Guatemala, las opciones disponibles son: <br> /message<br> /terminate <br> ";
-	respuesta += "Versión: 3.0.0 <br>";
+		respuesta += "Hora del servidor: " + now + " <br> ";
+		respuesta += "Hora inicio: " + config.OPEN_HOUR + " - Hora Fin: " + config.CLOSE_HOUR + " <br> ";
+		respuesta += "Respuesta del Horario: " + horarios + " <br> ";
+		respuesta += "Hora Convertida  " + nd +" <br>";
+		respuesta += "Versión: 4.0.0 <br>";
+
 	res.status(200).send(respuesta);
 })
 
 http.createServer(app).listen(port, () => {
   console.log('Server started at http://localhost:' + port);
 });
-
