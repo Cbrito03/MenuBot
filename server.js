@@ -38,11 +38,9 @@ var nomApp = config.nomApp;
 app.post('/message', (req, res) => {
 	config.obtener_fecha();
 
-	console.log("[Brito] :: [Peticion POST HN /message] :: [FECHA Actual] :: "+config.fecha_actual+" :: [Hora Actual] :: "+config.hora_actual);
+	console.log("[Brito] :: [Peticion POST HN /message]");
 	
 	var horarios = horario.validarHorario(config.OPEN_HOUR, config.OPEN_MINUTE, config.CLOSE_HOUR, config.CLOSE_MINUTE);
-
-	console.log("[Brito] :: [message] :: [Respuesta de Horario] :: " + horarios);
 
 	var result, resultado;
 	var bandera = false , estatus = 200;
