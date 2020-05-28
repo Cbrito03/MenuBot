@@ -32,6 +32,9 @@ var menu_opciones_2 = config.menu_opciones_2;
 var mjs_horario = config.mjs_horario;
 var contenedor = config.contenedor;
 
+var pais = config.pais;
+var nomApp = config.nomApp;
+
 app.post('/message', (req, res) => {
 	config.obtener_fecha();
 
@@ -52,7 +55,13 @@ app.post('/message', (req, res) => {
 	var user = req.body.user;
 	var context = req.body.context;
 	var cadena = req.body.message;
-  
+
+	var bandera_tranferido = false;
+	var bandera_fueraHorario = false;
+	var nom_grupoACD = "";
+	var opcion = "";
+	var bandera_opt = true;
+
 	if(apiVersion !== '' && typeof apiVersion !== "undefined") 
 	{
 		if(authToken !== '' && typeof authToken !== "undefined") 
@@ -79,12 +88,10 @@ app.post('/message', (req, res) => {
 
 									if(atr.toLowerCase() === cadena[i])
 									{
+										opcion = cadena[i];
 										msj_buscar = cadena[i];
-
-										result = palabras[atr];                    
-
+										result = palabras[atr];
 										bandera = true;
-
 										break;
 									}
 								}      
@@ -119,12 +126,16 @@ app.post('/message', (req, res) => {
 
 								var y = parseInt(msj_buscar_opcion);  
 
-								if(/*(*/localStorage.getItem("msj_"+conversationID) == "configuracion" /*|| localStorage.getItem("msj_"+conversationID) == "soporte")*/ && msj_buscar == "asesor")
+								if(localStorage.getItem("msj_"+conversationID) == "configuracion" && msj_buscar == "asesor")
 								{
+									opcion = "configuracion - asesor";
+
 									if(horarios)
 									{
 										localStorage.removeItem("msj_"+conversationID);
 										result = menu_opciones["2"];
+										nom_grupoACD = obtener_ACD(channel, 'c_asesor');
+										bandera_tranferido = true;
 										bandera = true;
 									}
 									else
@@ -136,12 +147,15 @@ app.post('/message', (req, res) => {
 				                        contenedor.queue = "";
 				                        contenedor.mensaje = mjs_horario;
 				                        result = contenedor;
+				                        bandera_fueraHorario = true;
 				                        bandera = true;
 									}									
 								}
 								else if((msj_buscar_opcion == "1" || msj_buscar_opcion == "2") && localStorage.getItem("msj_"+conversationID) == "asesor")
 								{
 									localStorage.removeItem("msj_"+conversationID);
+
+									opcion = "asesor - " + msj_buscar_opcion;
 
 									if(msj_buscar_opcion == "1")
 									{
@@ -156,6 +170,8 @@ app.post('/message', (req, res) => {
 										if(horarios)
 										{											
 											result = menu_opciones[msj_buscar_opcion];
+											nom_grupoACD = obtener_ACD(channel, 'asesor-2');
+											bandera_tranferido = true;
 										}
 										else
 										{	
@@ -164,6 +180,7 @@ app.post('/message', (req, res) => {
 					                        contenedor.accion = "end";
 					                        contenedor.queue = "";
 					                        contenedor.mensaje = mjs_horario;
+					                        bandera_fueraHorario = true;
 					                        result = contenedor;					                        
 										}							
 									}
@@ -174,9 +191,12 @@ app.post('/message', (req, res) => {
 									console.log("[Brito] :: [message] :: [Entro a cotizar] :: " + msj_buscar_opcion + " :: " + localStorage.getItem("msj_"+conversationID));
 									localStorage.removeItem("msj_"+conversationID);
 
+									opcion = "cotizar - " + msj_buscar_opcion;
 									if(horarios)
 									{
 										result = menu_opciones_2[msj_buscar_opcion];
+										nom_grupoACD = obtener_ACD(channel, 'cotizar-'+msj_buscar_opcion);
+										bandera_tranferido = true;
 									}
 									else
 									{	
@@ -185,6 +205,7 @@ app.post('/message', (req, res) => {
 				                        contenedor.accion = "end";
 				                        contenedor.queue = "";
 				                        contenedor.mensaje = mjs_horario;
+				                        bandera_fueraHorario = true;
 				                        result = contenedor;				                        
 									}
 									bandera = true;																	
@@ -194,9 +215,13 @@ app.post('/message', (req, res) => {
 									console.log("[Brito] :: [message] :: [Else IF opcion] :: " + msj_buscar_opcion+ " :: [localStorage] .: " + localStorage.getItem("msj_"+conversationID));
 									localStorage.removeItem("msj_"+conversationID);
 
+									opcion = "asesor - 1 - " + msj_buscar_opcion;
+
 									if(horarios)
 									{
-										result = menu_opciones_2[msj_buscar_opcion];										
+										result = menu_opciones_2[msj_buscar_opcion];
+										nom_grupoACD = obtener_ACD(channel, 'asesor-1-' + msj_buscar_opcion);
+										bandera_tranferido = true;
 									}
 									else
 									{	
@@ -205,6 +230,7 @@ app.post('/message', (req, res) => {
 				                        contenedor.accion = "end";
 				                        contenedor.queue = "";
 				                        contenedor.mensaje = mjs_horario;
+				                        bandera_fueraHorario = true;
 				                        result = contenedor;
 									}
 									bandera = true;
@@ -228,13 +254,40 @@ app.post('/message', (req, res) => {
 				                	}
 
 									bandera = true;
+									bandera_opt = false;
 				                }else
 				                {
 				                	localStorage.removeItem("msj_"+conversationID);
 				                }
-							}               
+							}
 
-							if(!bandera){result = msj_dafault; localStorage.removeItem("msj_"+conversationID);}
+							var options = {
+								'method': 'POST',
+								'url': 'https://estadisticasmenubot.mybluemix.net/opcion/insert',
+								'headers': {
+									'Content-Type': 'application/json'
+								},
+								body: JSON.stringify(
+								{
+									"conversacion_id": conversationID,
+									"pais": pais,
+									"app": nomApp,
+									"opcion": opcion,
+									"transferencia": bandera_tranferido,
+									"fueraHorario": bandera_fueraHorario,
+									"grupoACD": nom_grupoACD
+								})
+							};           
+
+							if(bandera == true && bandera_opt == true)
+							{
+								request(options, function (error, response)
+								{ 
+									if (error) throw new Error(error);
+									console.log(response.body);
+								});
+							}
+							else{result = msj_dafault; localStorage.removeItem("msj_"+conversationID);}
 
               				estatus = 200;
 
@@ -246,7 +299,7 @@ app.post('/message', (req, res) => {
 				                },
 				                "action":{
 									"type": result.accion,// "type":"continue"
-									"queue": result.queue
+									"queue": nom_grupoACD
 				                },
 				                "messages":[{
 									"type": result.type,
@@ -361,6 +414,58 @@ app.post('/terminate', (req, res) => {
   res.status(estatus).json(resultado);
 })
 
+function obtener_ACD(rs, op)
+{
+	switch (rs)
+	{
+		case "messenger":
+			if('c_asesor' === op || op == "asesor-2")
+			{
+				return config.cola_opc2_FB; // GT_FB_MSS_SAC
+			}
+			else if(op == "asesor-1-1" || op == "cotizar-1")
+			{
+				return config.cola_opc_1_1_FB; // GT_FB_MSS_VENTAS
+			}
+			else if(op == "asesor-1-2" || op == "cotizar-2")
+			{
+				return config.cola_opc_1_2_FB; // GT_FB_MSS_SAC
+			}
+			else{ return "";}
+		break;
+		case "twitterDM":
+			if('c_asesor' === op || op == "asesor-2")
+			{
+				return config.cola_opc2_TW; // GT_TW_DM_SAC
+			}
+			else if(op == "asesor-1-1" || op == "cotizar-1")
+			{
+				return config.cola_opc_1_1_TW; // GT_TW_DM_VENTAS
+			}
+			else if(op == "asesor-1-2" || op == "cotizar-2")
+			{
+				return config.cola_opc_1_2_TW; // GT_TW_DM_SAC
+			}
+			else{ return "";}
+		break;
+		default:
+			if('c_asesor' === op || op == "asesor-2")
+			{
+				return config.cola_opc2; 
+			}
+			else if(op == "asesor-1-1" || op == "cotizar-1")
+			{
+				return config.cola_opc_1_1;
+			}
+			else if(op == "asesor-1-2" || op == "cotizar-2")
+			{
+				return config.cola_opc_1_2;
+			}
+			else{ return "";}
+		break;
+	}
+}
+
 app.get('/:img', function(req, res){
     res.sendFile( `img/${img}` );
 }); 
@@ -383,7 +488,7 @@ app.get('/', (req, res) => {
 		respuesta += "Hora inicio: " + config.OPEN_HOUR + " - Hora Fin: " + config.CLOSE_HOUR + " <br> ";
 		respuesta += "Respuesta del Horario: " + horarios + " <br> ";
 		respuesta += "Hora Convertida  " + nd +" <br>";
-		respuesta += "Versión: 4.0.0 <br>";
+		respuesta += "Versión: 5.0.0 <br>";
 
 	res.status(200).send(respuesta);
 })

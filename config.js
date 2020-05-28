@@ -1,10 +1,19 @@
 //var cola_opc1 = "WhatsappTest";
-var cola_opc1 = "GT_Wa_Ventas";
-var cola_opc_1_1 = "GT_WA_Ventas_MO";
-var cola_opc_1_2 = "GT_WA_Ventas_FI";
+var pais = "GT", nomApp = "MenuBot_GT";
 
-//var cola_opc2 = "WhatsappSM";
+var cola_opc1 = "GT_Wa_Ventas";
+
+var cola_opc_1_1 = "GT_WA_Ventas_MO";
+var cola_opc_1_1_FB = "GT_FB_MSS_VENTAS";
+var cola_opc_1_1_TW = "GT_TW_DM_VENTAS";
+
+var cola_opc_1_2 = "GT_WA_Ventas_FI";
+var cola_opc_1_2_FB = "GT_FB_MSS_SAC";
+var cola_opc_1_2_TW = "GT_TW_DM_SAC";
+
 var cola_opc2 = "GT_Wa_Movil";
+var cola_opc2_FB = "GT_FB_MSS_SAC";
+var cola_opc2_TW = "GT_TW_DM_SAC";
 
 var OPEN_HOUR = 7;
 var OPEN_MINUTE = 0;
@@ -228,3 +237,24 @@ exports.dias = dias;
 exports.mjs_horario = mjs_horario;
 
 exports.contenedor = contenedor;
+
+exports.pais = pais;
+
+exports.nomApp = nomApp;
+
+/// Export de colas
+/// 
+/// 
+exports.cola_opc1 = cola_opc1;
+
+exports.cola_opc_1_1 = cola_opc_1_1;
+exports.cola_opc_1_1_FB = cola_opc_1_1_FB;
+exports.cola_opc_1_1_TW = cola_opc_1_1_TW;
+
+exports.cola_opc_1_2 = cola_opc_1_2;
+exports.cola_opc_1_2_FB = cola_opc_1_2_FB;
+exports.cola_opc_1_2_TW = cola_opc_1_2_TW;
+
+exports.cola_opc2 = cola_opc2;
+exports.cola_opc2_FB = cola_opc2_FB;
+exports.cola_opc2_TW = cola_opc2_TW;
