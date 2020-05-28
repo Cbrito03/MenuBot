@@ -92,6 +92,7 @@ app.post('/message', (req, res) => {
 										msj_buscar = cadena[i];
 										result = palabras[atr];
 										bandera = true;
+										bandera_opt = true;
 										break;
 									}
 								}      
@@ -149,7 +150,8 @@ app.post('/message', (req, res) => {
 				                        result = contenedor;
 				                        bandera_fueraHorario = true;
 				                        bandera = true;
-									}									
+									}
+									bandera_opt = true;									
 								}
 								else if((msj_buscar_opcion == "1" || msj_buscar_opcion == "2") && localStorage.getItem("msj_"+conversationID) == "asesor")
 								{
@@ -184,7 +186,8 @@ app.post('/message', (req, res) => {
 					                        result = contenedor;					                        
 										}							
 									}
-									bandera = true;								
+									bandera = true;
+									bandera_opt = true;							
 								}
 								else if((msj_buscar_opcion == "1" || msj_buscar_opcion == "2") && localStorage.getItem("msj_"+conversationID) == "cotizar")
 								{
@@ -208,7 +211,8 @@ app.post('/message', (req, res) => {
 				                        bandera_fueraHorario = true;
 				                        result = contenedor;				                        
 									}
-									bandera = true;																	
+									bandera = true;
+									bandera_opt = true;																
 								}
 								else if((msj_buscar_opcion == "1" || msj_buscar_opcion == "2") && localStorage.getItem("msj_"+conversationID) == "opcion_1_1")
 								{
@@ -234,22 +238,26 @@ app.post('/message', (req, res) => {
 				                        result = contenedor;
 									}
 									bandera = true;
+									bandera_opt = true;
 								}
 								else if (!isNaN(y) && (localStorage.getItem("msj_"+conversationID) == "asesor" || localStorage.getItem("msj_"+conversationID) == "cotizar" || localStorage.getItem("msj_"+conversationID) == "opcion_1_1"))
 				                {
 				                	if(localStorage.getItem("msj_"+conversationID) == "asesor")
 				                	{
 				                		console.log("[Brito] :: [No es el número correcto para el menu de asesor] :: [Número de opción] :: " + y);
+				                		opcion = "asesor";
 										result = palabras['asesor'];
 				                	}
 				                	else if(localStorage.getItem("msj_"+conversationID) == "opcion_1_1")
 				                	{
 				                		console.log("[Brito] :: [No es el número correcto para el menu de Opciín 1] :: [Número de opción] :: " + y);
+				                		opcion = "asesor-1";
 										result = menu_opciones["1"];
 				                	}
 				                	else if(localStorage.getItem("msj_"+conversationID) == "cotizar")
 				                	{
 				                		console.log("[Brito] :: [No es el número correcto para el menu de Cotizar] :: [Número de opción] :: " + y);
+				                		opcion = "cotizar";
 										result = palabras['cotizar'];
 				                	}
 
@@ -279,13 +287,18 @@ app.post('/message', (req, res) => {
 								})
 							};           
 
-							if(bandera == true && bandera_opt == true)
+							if(bandera == true)
 							{
-								request(options, function (error, response)
-								{ 
-									if (error) throw new Error(error);
-									console.log(response.body);
-								});
+								if(bandera_opt)
+								{
+									console.log(options);
+									request(options, function (error, response)
+									{ 
+										if (error) throw new Error(error);
+										console.log(response.body);
+									});
+								}
+								
 							}
 							else{result = msj_dafault; localStorage.removeItem("msj_"+conversationID);}
 
