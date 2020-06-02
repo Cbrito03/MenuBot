@@ -48,10 +48,14 @@ var msj_asesor_uno = "👋 Te damos la bienvenida a la GigaRed Claro, nuestro co
     msj_asesor_uno += "1. Adquirir un plan nuevo, información de promociones o renovar mi servicio $cr ";
     msj_asesor_uno += "2. Gestiones y soporte de mis servicios actuales $cr ";
 
-var msj_opcion_uno = "¡Hola!🤗 Bienvenido a nuestro servicio de ventas Claro $cr $cr ";
+var msj_opcion_uno = "*¡Hola!🤗 Bienvenido a nuestro servicio de ventas Claro.* Recuerda que esta opción es exclusiva para ventas y/o renovaciones. $cr $cr ";
     msj_opcion_uno += "Por favor ingresa el número de la opción con la que necesitas apoyo: $cr $cr ";
     msj_opcion_uno += "1. Servicios Móviles $cr ";
     msj_opcion_uno += "2. Servicios Fijos $cr ";
+
+var msj_facturar = "Puedes descargar tu factura móvil ingresando al siguiente portal: http://bit.ly/MiClaroFactura $cr $cr";
+    msj_facturar += "Puedes pagar fácil y rápido aquí: gt.mipagoclaro.com 💳🧾 $cr $cr";
+    msj_facturar += "Si tienes consultas sobre algún detalle específico en tu factura, envía *asesor* 👩💻👨💻";
 
 var contenedor = {
   "type": "",
@@ -73,7 +77,7 @@ var palabras = {
       "type": "text",
       "accion" : "continue",
       "queue" : "",
-      "mensaje" : "Puedes descargar tu factura móvil ingresando al siguiente portal: http://bit.ly/MiClaroFactura $cr $cr Puedes pagar fácil y rápido aquí: gt.mipagoclaro.com 💳🧾",
+      "mensaje" : msj_facturar,
       "mediaURL" : ""
   },
   "soporte": {
@@ -115,7 +119,7 @@ var palabras = {
       "type": "image",
       "accion" : "continue",
       "queue" : "",
-      "mensaje" : "Sigue los pasos detallados en la imagen, si el inconveniente persiste, favor escribe *asesor* para recibir asistencia técnica con uno de nuestros agentes.",
+      "mensaje" : "Sigue los pasos detallados en la imagen, https://bit.ly/configuracion_movil $cr $cr Si el inconveniente persiste, envía *asesor* 👩💻👨💻",
       "mediaURL" : "https://nodejsmenubotca.mybluemix.net/APN%20GT.jpeg"
   },  
   "club": {
@@ -131,7 +135,7 @@ var palabras = {
       "queue" : "",
       "mensaje" : msj_asesor_uno,
       "mediaURL" : ""
-  }  
+  }
 }
 
 var menu_opciones = 
@@ -175,7 +179,7 @@ var mensaje_df = "¡Hola! $cr Soy *Avi*, tu asistente virtual 🤖 de Claro $cr 
     mensaje_df +="➡️ Envía *pagar* para ver el saldo, fecha de vencimiento y pagar tu factura móvil y residencial. 💳 $cr $cr ";    
     mensaje_df +="➡️ Envía *configuración* para conocer los pasos a seguir si no puedes navegar desde tu celular📱.  $cr $cr ";    
     mensaje_df +="➡️ Envía *club* para conocer los establecimientos con promociones especiales solo por ser cliente Claro. 😎 💰 $cr $cr ";
-    mensaje_df +="➡️ Envía *asesor* si aún deseas ser atendido por uno de nuestros agentes de servicio al cliente o ventas. 👩💻👨💻 $cr $cr ";
+    //mensaje_df +="➡️ Envía *asesor* si aún deseas ser atendido por uno de nuestros agentes de servicio al cliente o ventas. 👩💻👨💻 $cr $cr ";
   
 var msj_default = 
 {

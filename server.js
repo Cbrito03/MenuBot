@@ -82,7 +82,8 @@ app.post('/message', (req, res) => {
 							{
 								for(var atr in palabras)
 								{
-									if(cadena[i] === "configuración"){ cadena[i] = 'configuracion'}
+									if(cadena[i] === "configuración" || cadena[i] === "configuracion"){ cadena[i] = 'configuracion'; localStorage.removeItem("msj_"+conversationID);}
+									if(cadena[i] === "factura"){ localStorage.removeItem("msj_"+conversationID);}
 
 									if(atr.toLowerCase() === cadena[i])
 									{
@@ -103,10 +104,11 @@ app.post('/message', (req, res) => {
 							{
 								console.log('Crea Storage :: ' + localStorage.getItem("msj_"+conversationID));
 
-								if(msj_buscar == "configuracion" /*|| msj_buscar == "soporte"*/)
+								if(msj_buscar == "configuracion" || msj_buscar == "factura" /*|| msj_buscar == "soporte"*/)
 								{
-									console.log("[Brito] :: [message] :: [Se crea LocalStrogae para configuracion y soporte] :: " + msj_buscar);
+									console.log("[Brito] :: [message] :: [Se crea LocalStrogae para configuracion y factura] :: " + msj_buscar);
 									localStorage.setItem("msj_"+conversationID, msj_buscar);
+									console.log('[Brito] :: [message] ::', localStorage.getItem("msj_"+conversationID));
 								}
 								else if(msj_buscar == "asesor")
 								{
@@ -124,10 +126,10 @@ app.post('/message', (req, res) => {
 								console.log('[Brito] :: [message] :: [Borra Storage] :: ' + localStorage.getItem("msj_"+conversationID));
 
 								var y = parseInt(msj_buscar_opcion);  
-
-								if(localStorage.getItem("msj_"+conversationID) == "configuracion" && msj_buscar == "asesor")
+								var msj_storage = localStorage.getItem("msj_"+conversationID);
+								if(( msj_storage == "configuracion" || msj_storage == "factura" ) && msj_buscar == "asesor")
 								{
-									opcion = "configuracion - asesor";
+									opcion = msj_storage + " - asesor";
 
 									if(horarios)
 									{
@@ -379,48 +381,48 @@ app.post('/message', (req, res) => {
 })
 
 app.post('/terminate', (req, res) => {
-  var result, resultado;
-  var bandera = false , estatus = 200;
+	var result, resultado;
+	var bandera = false , estatus = 200;
 
-  var conversationID = req.body.conversationId;
-  var RRSS = req.body.RRSS;
-  var canal = req.body.channel;
-  var contexto = req.body.context;
+	var conversationID = req.body.conversationId;
+	var RRSS = req.body.RRSS;
+	var canal = req.body.channel;
+	var contexto = req.body.context;
 
-  if(RRSS !== '' && typeof RRSS !== "undefined") 
-  {
-    if(canal !== '' && typeof canal !== "undefined") 
-    {
-      if(contexto !== '' && typeof contexto !== "undefined") 
-      {
-        estatus = 200;
-        resultado = {
-          "estado": "OK"
-        }
-      }
-      else
-      {
-        estatus = 400;
-        resultado = {
-          "estado": "El valor de contexto es requerido"
-        }
-      }
-    }
-    else
-    {
-      estatus = 400;
-      resultado = {
-        "estado": "El valor de canal es requerido"
-      }
-    } 
-  }
-  else
-  {
-    estatus = 400;
-    resultado = {
-      "estado": "El valor de RRSS es requerido"
-    }
-  } 
+	if(RRSS !== '' && typeof RRSS !== "undefined") 
+	{
+	    if(canal !== '' && typeof canal !== "undefined") 
+	    {
+	      if(contexto !== '' && typeof contexto !== "undefined") 
+	      {
+	        estatus = 200;
+	        resultado = {
+	          "estado": "OK"
+	        }
+	      }
+	      else
+	      {
+	        estatus = 400;
+	        resultado = {
+	          "estado": "El valor de contexto es requerido"
+	        }
+	      }
+	    }
+	    else
+	    {
+	      estatus = 400;
+	      resultado = {
+	        "estado": "El valor de canal es requerido"
+	      }
+	    } 
+	}
+	else
+	{
+		estatus = 400;
+	    resultado = {
+	      "estado": "El valor de RRSS es requerido"
+	    }
+	} 
 
   res.status(estatus).json(resultado);
 })
@@ -499,7 +501,7 @@ app.get('/', (req, res) => {
 		respuesta += "Hora inicio: " + config.OPEN_HOUR + " - Hora Fin: " + config.CLOSE_HOUR + " <br> ";
 		respuesta += "Respuesta del Horario: " + horarios + " <br> ";
 		respuesta += "Hora Convertida  " + nd +" <br>";
-		respuesta += "Versión: 5.0.0 <br>";
+		respuesta += "Versión: 5.1.0 <br>";
 
 	res.status(200).send(respuesta);
 })
