@@ -57,6 +57,8 @@ var msj_facturar = "Puedes descargar tu factura móvil ingresando al siguiente p
     msj_facturar += "Puedes pagar fácil y rápido aquí: gt.mipagoclaro.com 💳🧾 $cr $cr";
     msj_facturar += "Si tienes consultas sobre algún detalle específico en tu factura, envía *asesor* 👩💻👨💻";
 
+var msj_espera = "En este momento nuestros agentes están ocupados, te atenderemos a la brevedad posible 😥. Para adelantar con tu solicitud, detalla tu consulta y número telefónico. (Si ya lo brindaste haz caso omiso)";
+
 var contenedor = {
   "type": "",
   "accion" : "",
@@ -150,7 +152,7 @@ var menu_opciones =
   "2": {
       "accion" : "transfer",
       "queue" : cola_opc2,
-      "mensaje" : ""//"En un momento mas uno de nuestros asesores te atenderá"
+      "mensaje" : msj_espera//""//"En un momento mas uno de nuestros asesores te atenderá"
   }
 }
 
@@ -159,12 +161,12 @@ var menu_opciones_2 =
   "1": {
       "accion" : "transfer",
       "queue" : cola_opc_1_1,
-      "mensaje" : ""
+      "mensaje" : msj_espera //""
   },
   "2": {
       "accion" : "transfer",
       "queue" : cola_opc_1_2,
-      "mensaje" : ""//"En un momento mas uno de nuestros asesores te atenderá"
+      "mensaje" : msj_espera //""//"En un momento mas uno de nuestros asesores te atenderá"
   }
 }
 

@@ -501,7 +501,7 @@ app.get('/', (req, res) => {
 		respuesta += "Hora inicio: " + config.OPEN_HOUR + " - Hora Fin: " + config.CLOSE_HOUR + " <br> ";
 		respuesta += "Respuesta del Horario: " + horarios + " <br> ";
 		respuesta += "Hora Convertida  " + nd +" <br>";
-		respuesta += "Versión: 5.1.0 <br>";
+		respuesta += "Versión: 5.2.0 <br>";
 
 	res.status(200).send(respuesta);
 })
