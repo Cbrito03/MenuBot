@@ -18,7 +18,7 @@ var cola_opc2_TW = "GT_TW_DM_SAC";
 var OPEN_HOUR = 7;
 var OPEN_MINUTE = 0;
 
-var CLOSE_HOUR = 21;
+var CLOSE_HOUR = 20;
 var CLOSE_MINUTE = 0;
 
 var offset = -6;
@@ -33,15 +33,11 @@ var dias = {
     "6" : ["sabado",true]
 };
 
-var mjs_horario = "¡Apegándonos al plan de contención por el Coronavirus (COVID-19), te informamos nuestros nuevos horarios de atención! $cr $cr ";
-    mjs_horario += "🕗 Lunes a Domingo: $cr";
-    mjs_horario += "💬 WhatsApp: 07:00 a 21:00 horas $cr ";
-    mjs_horario += "📱 Call Center: 07:00 a 21:00 horas marcando *1 o 147-100 $cr ";
-    mjs_horario += "💬 Chat: 07:00 a 21:00 horas $cr ";
-    mjs_horario += "📧 Mail: 07:00 a 21:00 horas $cr ";
-    mjs_horario += "👤 Facebook: 07:00 a 21:00 horas $cr ";
-    mjs_horario += "¡Claro que sí! $cr $cr ";
-    mjs_horario += "Te invitamos a utilizar nuestro menú digital 24/7 http://bit.ly/ClaroMenuDigital. para que puedas hacer tus autogestiones";
+var mjs_horario = "¡Hola! Te saluda AVI 🤖 tu Asistente Virtual de Claro quiero comentarte que nuestros horarios ";
+    mjs_horario += "de atención son de lunes a domingo de 08:00 am a 08:00 pm. $cr $cr";
+    mjs_horario += 'Con gusto te estaremos atendiendo mañana para ayudarte con tu solicitud, si quieres que uno de ';
+    mjs_horario += 'nuestros asesores se comunique contigo por llamada coloca *“Llamarme”* o si prefieres que te sigamos atendiendo ';
+    mjs_horario += 'por este medio coloca *“Whatsapp”*';
 
 var msj_asesor_uno = "👋 Te damos la bienvenida a la GigaRed Claro, nuestro compromiso es mantenerte conectado.😊 $cr $cr ";
     msj_asesor_uno += "Ingresa el número de la opción con la que necesitas apoyo: $cr $cr ";
@@ -58,6 +54,66 @@ var msj_facturar = "Puedes descargar tu factura móvil ingresando al siguiente p
     msj_facturar += "Si tienes consultas sobre algún detalle específico en tu factura, envía *asesor* 👩💻👨💻";
 
 var msj_espera = "En este momento nuestros agentes están ocupados, te atenderemos a la brevedad posible 😥. Para adelantar con tu solicitud, detalla tu consulta y número telefónico. (Si ya lo brindaste haz caso omiso)";
+
+var msj_ayuda = {  
+  msj_ayuda_1 : "Descarga nuestra App renovada para ti 👉🏼 http://onelink.to/claroappgt $cr $cr ¿Cómo me registro? Android",
+  msj_ayuda_2 : "¿Cómo me registro? Apple",
+  msj_ayuda_3 : "¿Cómo asocio mis números?",  
+  img_ayuda_1 : "http://localhost:8080/red_portatiles_1.png",
+  img_ayuda_2 : "http://localhost:8080/red_portatiles_2.png",
+  img_ayuda_3 : "http://localhost:8080/red_portatiles_3.png"
+}
+
+msj_ayuda_FB = [
+  {
+    "type": "text",
+    "text": msj_ayuda.msj_ayuda_1,
+    "mediaURL" : ""
+  },
+  {
+    "type": 'image',
+    "text": '',
+    "mediaURL": msj_ayuda.img_ayuda_1
+  },
+  {
+    "type": "text",
+    "text": msj_ayuda.msj_ayuda_2,
+    "mediaURL" : ""
+  },
+  {
+    "type": 'image',
+    "text": '',
+    "mediaURL": msj_ayuda.img_ayuda_2
+  },
+  {
+    "type": "text",
+    "text": msj_ayuda.msj_ayuda_3,
+    "mediaURL" : ""
+  },
+  {
+    "type": 'image',
+    "text": '',
+    "mediaURL": msj_ayuda.img_ayuda_3
+  }
+];
+
+msj_ayuda_WATW = [
+  {
+    "type": "image",
+    "text": msj_ayuda.msj_ayuda_1,
+    "mediaURL" : msj_ayuda.img_ayuda_1
+  },
+  {
+    "type": 'image',
+    "text": msj_ayuda.msj_ayuda_2,
+    "mediaURL": msj_ayuda.img_ayuda_2
+  },
+  {
+    "type": 'image',
+    "text": msj_ayuda.msj_ayuda_3,
+    "mediaURL": msj_ayuda.img_ayuda_3
+  }
+];
 
 var contenedor = {
   "type": "",
@@ -82,13 +138,27 @@ var palabras = {
       "mensaje" : msj_facturar,
       "mediaURL" : ""
   },
+  "ayuda": {
+    "type": "text",
+    "accion" : "continue",
+    "queue" : "",
+    "mensaje" : "",
+    "mediaURL" : ""
+  },
   "soporte": {
       "type": "text", //"image",
       "accion" : "continue",
       "queue" : "",
       "mensaje" : "Da click acá y te apoyaremos de inmediato con soporte técnico para cualquiera de tus servicios fijos https://bit.ly/soporte-técnico-Claro",
       "mediaURL" : "" //"https://nodejsmenubotca.mybluemix.net/Router.jpeg"
-  }, 
+  },
+  "asistencia": {
+    "type": "text",
+    "accion" : "continue",
+    "queue" : "",
+    "mensaje" : "Sigue los pasos detallados en la imagen,  https://bit.ly/configuracion_movil $cr $cr Si el inconveniente persiste, envía *asesor* 👩💻👨💻 ",
+    "mediaURL" : ""
+  },
   "precio": {
       "type": "text",
       "accion" : "continue",
@@ -170,11 +240,31 @@ var menu_opciones_2 =
   }
 }
 
+var menu_fueraHorario = 
+{
+  "llamarme": {
+    "type": "text",
+    "accion" : "transfer", 
+    "queue" : cola_opc_1_1,
+    "mensaje" : "",
+    "mediaURL" : ""
+  },
+  "whatsapp": {
+    "type": "text",
+    "accion" : "transfer",
+    "queue" : cola_opc_1_2,
+    "mensaje" : "",
+    "mediaURL" : ""
+  }
+}
+
 var mensaje_df = "¡Hola! $cr Soy *Avi*, tu asistente virtual 🤖 de Claro $cr ";
     mensaje_df +="¡Échale un vistazo a mi nuevo menú de opciones con las que te puedo apoyar más rápido!  Solo envía una de las palabras que aparecen resaltadas según tu consulta. $cr $cr "
     mensaje_df +="➡️ Envía *cotizar* para conocer nuestros planes móviles y residenciales. 😎 $cr $cr ";
     mensaje_df +="➡️ Envía *factura* para conocer tus opciones en consulta de facturas. (Monto y fecha de vencimiento) 📥 $cr $cr ";
+    mensaje_df +="➡️ Envía *ayuda* para conocer todo lo que puedes hacer en un mismo lugar. ¡Puedes consultar tu saldo, tus paquetes contratados, tu consumo de internet móvil y mucho más! 😎 $cr $cr ";
     mensaje_df +="➡️ Envía *soporte* si presentas inconvenientes con tu internet de casa por lentitud o no navegas, línea fija o Claro TV ☎📺🖥 $cr $cr ";
+    mensaje_df +="➡️ Envía *asistencia* si presentas inconvenientes con tu internet de celular, llamadas o mensajes de texto📱. $cr $cr ";
     mensaje_df +="➡️ Envía *precio* para ver el catálogo de celulares prepago por marca. 📱 $cr $cr ";
     mensaje_df +="➡️ Envía *recarga* para hacer una recarga. $cr $cr ";
     mensaje_df +="➡️ Envía *paquete* para comprar un paquete. $cr $cr ";
@@ -225,6 +315,8 @@ exports.menu_opciones = menu_opciones;
 
 exports.menu_opciones_2 = menu_opciones_2;
 
+exports.menu_fueraHorario = menu_fueraHorario;
+
 exports.msj_default = msj_default;
 
 exports.obtener_fecha = obtener_fecha;
@@ -264,3 +356,7 @@ exports.cola_opc_1_2_TW = cola_opc_1_2_TW;
 exports.cola_opc2 = cola_opc2;
 exports.cola_opc2_FB = cola_opc2_FB;
 exports.cola_opc2_TW = cola_opc2_TW;
+
+exports.msj_ayuda = msj_ayuda;
+exports.msj_ayuda_FB = msj_ayuda_FB;
+exports.msj_ayuda_WATW = msj_ayuda_WATW;
