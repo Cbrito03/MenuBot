@@ -59,9 +59,9 @@ var msj_ayuda = {
   msj_ayuda_1 : "Descarga nuestra App renovada para ti 👉🏼 http://onelink.to/claroappgt $cr $cr ¿Cómo me registro? Android",
   msj_ayuda_2 : "¿Cómo me registro? Apple",
   msj_ayuda_3 : "¿Cómo asocio mis números?",  
-  img_ayuda_1 : "http://localhost:8080/red_portatiles_1.png",
-  img_ayuda_2 : "http://localhost:8080/red_portatiles_2.png",
-  img_ayuda_3 : "http://localhost:8080/red_portatiles_3.png"
+  img_ayuda_1 : "https://nodejsmenubotca.mybluemix.net//red_portatiles_1.png",
+  img_ayuda_2 : "https://nodejsmenubotca.mybluemix.net//red_portatiles_2.png",
+  img_ayuda_3 : "https://nodejsmenubotca.mybluemix.net//red_portatiles_3.png"
 }
 
 msj_ayuda_FB = [
