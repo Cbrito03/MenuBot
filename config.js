@@ -15,7 +15,7 @@ var cola_opc2 = "GT_Wa_Movil";
 var cola_opc2_FB = "GT_FB_MSS_SAC";
 var cola_opc2_TW = "GT_TW_DM_SAC";
 
-var OPEN_HOUR = 7;
+var OPEN_HOUR = 8;
 var OPEN_MINUTE = 0;
 
 var CLOSE_HOUR = 20;
