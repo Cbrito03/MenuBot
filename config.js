@@ -1,5 +1,5 @@
 //var cola_opc1 = "WhatsappTest";
-var pais = "GT", nomApp = "MenuBot_GT";
+var pais = "GT", nomApp = "MenuBot_GT", version = "6.1.0";
 
 var cola_opc1 = "GT_Wa_Ventas";
 
@@ -14,6 +14,21 @@ var cola_opc_1_2_TW = "GT_TW_DM_SAC";
 var cola_opc2 = "GT_Wa_Movil";
 var cola_opc2_FB = "GT_FB_MSS_SAC";
 var cola_opc2_TW = "GT_TW_DM_SAC";
+
+var cola_cotizar = {
+  "FB" : {
+    "op_1" : "GT_FB_MSS_Ventas_MO", // cotizar-1
+    "op_2" : "GT_FB_MSS_Ventas_FI", // cotizar-2
+  },
+  "TW" : {
+    "op_1" : "GT_TW_DM_Ventas_MO", // cotizar-1
+    "op_2" : "GT_TW_DM_Ventas_FI", // cotizar-2
+  },
+  "WA" : {
+    "op_1_1" : "GT_WA_Ventas_MO", // cotizar-1
+    "op_1_2" : "GT_WA_Ventas_FI", // cotizar-2
+  }
+};
 
 var OPEN_HOUR = 8;
 var OPEN_MINUTE = 0;
@@ -360,3 +375,6 @@ exports.cola_opc2_TW = cola_opc2_TW;
 exports.msj_ayuda = msj_ayuda;
 exports.msj_ayuda_FB = msj_ayuda_FB;
 exports.msj_ayuda_WATW = msj_ayuda_WATW;
+
+exports.cola_cotizar = cola_cotizar;
+exports.version = version;

@@ -313,14 +313,11 @@ app.post('/message', (req, res) => {
 								if(channel == "messenger")
 								{
 									message_text = config.msj_ayuda_FB;
-									//console.log("[Brito] :: [IF] :: [channel] :: ", channel, " :: [opcion] :: ", opcion);
 								}
 								else
 								{
 									message_text = config.msj_ayuda_WATW;
-									//console.log("[Brito] :: [ELSE] :: [channel] :: ", channel, " :: [opcion] :: ", opcion);
 								}
-								//console.log("[Brito] :: [RESULTADO] :: [channel] :: ", channel, " :: [opcion] :: ", opcion, " :: [message_text] :: ", message_text);
 							}
 							else
 							{
@@ -348,28 +345,7 @@ app.post('/message', (req, res) => {
 								}
 							}
 
-							console.log("[Brito] :: [RESULTADO] :: [resultado] :: ", resultado);    
-
-				            /*resultado = {
-				                "context":{
-									"agent":false,
-									"callback":false,
-									"video":false
-				                },
-				                "action":{
-									"type": result.accion,
-									"queue": nom_grupoACD
-				                },
-				                "messages":[{
-									"type": result.type,
-									"text": result.mensaje,
-									"mediaURL": result.mediaURL
-								}],
-				                "additionalInfo": {
-									"key":"RUT",
-									"RUT":"1-9"
-				                }
-				            };*/
+							console.log("[Brito] :: [RESULTADO] :: [resultado] :: ", resultado);
 
 				            if( result.mensaje === "" && opcion !== "ayuda"){resultado.messages = [];}
 
@@ -482,13 +458,21 @@ function obtener_ACD(rs, op)
 			{
 				return config.cola_opc2_FB; // GT_FB_MSS_SAC
 			}
-			else if(op == "asesor-1-1" || op == "cotizar-1")
+			else if(op == "asesor-1-1")
 			{
 				return config.cola_opc_1_1_FB; // GT_FB_MSS_VENTAS
 			}
-			else if(op == "asesor-1-2" || op == "cotizar-2")
+			else if(op == "asesor-1-2")
 			{
 				return config.cola_opc_1_2_FB; // GT_FB_MSS_SAC
+			}
+			else if(op == "cotizar-1")
+			{
+				return config.cola_cotizar["FB"].op_1; // GT_FB_MSS_Ventas_MO
+			}
+			else if(op == "cotizar-2")
+			{
+				return config.cola_cotizar["FB"].op_2; // GT_FB_MSS_Ventas_FI
 			}
 			else{ return "";}
 		break;
@@ -497,13 +481,21 @@ function obtener_ACD(rs, op)
 			{
 				return config.cola_opc2_TW; // GT_TW_DM_SAC
 			}
-			else if(op == "asesor-1-1" || op == "cotizar-1")
+			else if(op == "asesor-1-1")
 			{
 				return config.cola_opc_1_1_TW; // GT_TW_DM_VENTAS
 			}
-			else if(op == "asesor-1-2" || op == "cotizar-2")
+			else if(op == "asesor-1-2")
 			{
 				return config.cola_opc_1_2_TW; // GT_TW_DM_SAC
+			}
+			else if(op == "cotizar-1")
+			{
+				return config.cola_cotizar["TW"].op_1; // GT_TW_DM_Ventas_MO
+			}
+			else if(op == "cotizar-2")
+			{
+				return config.cola_cotizar["TW"].op_2; // GT_TW_DM_Ventas_FI
 			}
 			else{ return "";}
 		break;
@@ -514,11 +506,11 @@ function obtener_ACD(rs, op)
 			}
 			else if(op == "asesor-1-1" || op == "cotizar-1")
 			{
-				return config.cola_opc_1_1; // GT_WA_Ventas_MO
+				return config.cola_cotizar["WA"].op_1_1; // GT_WA_Ventas_MO
 			}
 			else if(op == "asesor-1-2" || op == "cotizar-2")
 			{
-				return config.cola_opc_1_2; // GT_WA_Ventas_FI
+				return config.cola_cotizar["WA"].op_1_2; // GT_WA_Ventas_FI
 			}
 			else{ return "";}
 		break;
@@ -567,7 +559,7 @@ app.get('/', (req, res) => {
 		respuesta += "Hora inicio: " + config.OPEN_HOUR + " - Hora Fin: " + config.CLOSE_HOUR + " <br> ";
 		respuesta += "Respuesta del Horario: " + horarios + " <br> ";
 		respuesta += "Hora Convertida  " + nd +" <br>";
-		respuesta += "<strong> Sixbell "+d.getFullYear()+" - Versión: 6.0.0 </strong><br>";
+		respuesta += "<strong> Sixbell "+d.getFullYear()+" - Versión: "+config.version+" </strong><br>";
 
 	res.status(200).send(respuesta);
 })
