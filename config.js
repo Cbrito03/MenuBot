@@ -30,10 +30,10 @@ var cola_cotizar = {
   }
 };
 
-var OPEN_HOUR = 8;
+var OPEN_HOUR = 7;
 var OPEN_MINUTE = 0;
 
-var CLOSE_HOUR = 20;
+var CLOSE_HOUR = 22;
 var CLOSE_MINUTE = 0;
 
 var offset = -6;
