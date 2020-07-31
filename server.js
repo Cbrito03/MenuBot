@@ -375,7 +375,8 @@ app.post('/wa/message', (req, res) => {
 								}
 							}
 
-							console.log("[Brito] :: [RESULTADO] :: [resultado] :: ", resultado);
+							console.log("[Brito] :: [RESULTADO] :: [resultado] :: ");
+							console.log(resultado);
 				            console.log("[Brito] :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: [Brito]");
             			}
            		 		else
@@ -875,7 +876,8 @@ app.post('/fb/message', (req, res) => {
 								}
 							}
 
-							console.log("[Brito] :: [RESULTADO] :: [resultado] :: ", resultado);
+							console.log("[Brito] :: [RESULTADO] :: [resultado] :: ");
+							console.log(resultado);
 				            console.log("[Brito] :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: [Brito]");
             			}
            		 		else
@@ -1375,7 +1377,8 @@ app.post('/tw/message', (req, res) => {
 								}
 							}
 
-							console.log("[Brito] :: [RESULTADO] :: [resultado] :: ", resultado);
+							console.log("[Brito] :: [RESULTADO] :: [resultado] :: ");
+							console.log(resultado);
 				            console.log("[Brito] :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: [Brito]");
             			}
            		 		else
