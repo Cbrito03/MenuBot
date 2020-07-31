@@ -47,7 +47,8 @@ app.post('/wa/message', (req, res) => {
 	var context = req.body.context;
 	var cadena = req.body.message;
 
-	console.log("[context] :: ",context);
+	console.log("[context] :: ");
+	console.log(context);
 
 	var bandera_tranferido = false;
 	var bandera_fueraHorario = false;
@@ -448,6 +449,9 @@ app.post('/fb/message', (req, res) => {
 	var bandera_tranferido = false;
 	var bandera_fueraHorario = false;
 	var bandera_opt = true;
+
+	console.log("[context] :: ");
+	console.log(context);
 
 	if(apiVersion !== '' && typeof apiVersion !== "undefined") 
 	{
@@ -945,6 +949,9 @@ app.post('/tw/message', (req, res) => {
 	var bandera_tranferido = false;
 	var bandera_fueraHorario = false;
 	var bandera_opt = true;
+
+	console.log("[context] :: ");
+	console.log(context);
 
 	if(apiVersion !== '' && typeof apiVersion !== "undefined") 
 	{
