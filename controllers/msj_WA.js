@@ -60,13 +60,13 @@ var msj_factura = "Puedes descargar tu factura móvil ingresando al siguiente po
     msj_factura += "Puedes pagar fácil y rápido aquí: gt.mipagoclaro.com 💳🧾 $cr $cr";
     msj_factura += "Si tienes consultas sobre algún detalle específico en tu factura, envía *asesor* 👩💻👨💻";
 
-var msj_ayuda = "¡Consulta tu consumo de datos, tu saldo, tus paquetes contratados y mucho más! desde nuestra App renovada para ti.";
-    msj_ayuda += "Descarga la App 👉🏼 http://onelink.to/claroappgt";
-    msj_ayuda += "¿Cómo me registro?";
-    msj_ayuda += "👉🏼 https://bit.ly/registro-android ";
-    msj_ayuda += "👉🏼 https://bit.ly/registro-apple ";
-    msj_ayuda += "¿Cómo asocio mis números?";
-    msj_ayuda += "👉🏼 https://bit.ly/asociar-números";
+var msj_ayuda = "¡Consulta tu consumo de datos, tu saldo, tus paquetes contratados y mucho más! desde nuestra App renovada para ti. $cr ";
+    msj_ayuda += "Descarga la App 👉🏼 http://onelink.to/claroappgt $cr ";
+    msj_ayuda += "¿Cómo me registro? $cr ";
+    msj_ayuda += "👉🏼 https://bit.ly/registro-android $cr ";
+    msj_ayuda += "👉🏼 https://bit.ly/registro-apple $cr ";
+    msj_ayuda += "¿Cómo asocio mis números? $cr ";
+    msj_ayuda += "👉🏼 https://bit.ly/asociar-números $cr ";
 
 var msj_precio = "Conoce nuestros equipos disponibles 📥📁📱 ingresando aquí $cr ";
     msj_precio += "https://tiendaenlinea.claro.com.gt/ $cr";
