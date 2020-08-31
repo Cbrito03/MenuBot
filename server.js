@@ -14,6 +14,7 @@ var msj_wa = require('./controllers/msj_WA.js');
 var horario = require('./controllers/validar_horario.js');
 var moment = require('moment');
 var moment_timezone = require('moment-timezone');
+const axios = require('axios');
 var port = 8080;
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -30,7 +31,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.post('/wa/message', (req, res) => {
+app.post('/wa/message', async (req, res) => {
 	console.log("[Brito] :: [Peticion POST WA_GT /message]");
 	
 	var horarios = horario.validarHorario_WA();
@@ -39,6 +40,8 @@ app.post('/wa/message', (req, res) => {
 	var bandera = false , estatus = 200;
 	var opcion = "", msj_buscar = "", msj_buscar_opcion = "";
 
+	var bandera_tranferido = false, bandera_fueraHorario = false, bandera_opt = true;
+
 	var apiVersion = req.body.apiVersion;
 	var conversationID = req.body.conversationId;
 	var authToken = req.body.authToken;
@@ -46,13 +49,6 @@ app.post('/wa/message', (req, res) => {
 	var user = req.body.user;
 	var context = req.body.context;
 	var cadena = req.body.message;
-
-	console.log("[context] :: ");
-	console.log(context);
-
-	var bandera_tranferido = false;
-	var bandera_fueraHorario = false;
-	var bandera_opt = true;
 
 	if(apiVersion !== '' && typeof apiVersion !== "undefined") 
 	{
@@ -305,21 +301,21 @@ app.post('/wa/message', (req, res) => {
 									bandera_tranferido = true;								
 									bandera = true;
 									bandera_opt = true;
-								}							
+								}  
 
 								var options = {
-									'method': 'POST',
-									'url': config.url_estd,
-									'headers': { 'Content-Type': 'application/json'},
-									body: JSON.stringify(
-									{
+									method : 'post',
+									url : config.url_estd,
+									headers : { 'Content-Type': 'application/json'},
+									data: JSON.stringify({
 										"conversacion_id" : conversationID,
 										"pais" : config.info.pais,
 										"app" : config.info.nomApp,
 										"opcion" : opcion,
+										"rrss" : "WA",
 										"transferencia" : bandera_tranferido,
 										"fueraHorario" : bandera_fueraHorario,
-										"grupoACD" : result_action.queue
+										"grupoACD" : result_action.queue				
 									})
 								};          
 
@@ -328,13 +324,10 @@ app.post('/wa/message', (req, res) => {
 									if(bandera_opt)
 									{
 										console.log(options);
-										request(options, function (error, response)
-										{ 
-											if (error) throw new Error(error);
-											console.log(response.body);
-										});
-									}
-									
+										var resultado_axios = await axios(options);
+										console.log("[Resultado AXIOS] :: ");
+										console.log(resultado_axios);
+									}									
 								}
 								else
 								{
@@ -346,11 +339,7 @@ app.post('/wa/message', (req, res) => {
 								console.log("[Brito] :: [channel] :: ", channel, " :: [opcion] :: ", opcion);
 																
 								resultado = {
-									"context": context, /*{
-										"agent":false,
-										"callback":false,
-										"video":false
-									},*/
+									"context": context,
 									"action": result_action,
 									"messages": result_messages,
 									"additionalInfo": {
@@ -430,7 +419,7 @@ app.post('/wa/message', (req, res) => {
  	res.status(estatus).json(resultado);
 });
 
-app.post('/fb/message', (req, res) => {
+app.post('/fb/message', async (req, res) => {
 	console.log("[Brito] :: [Peticion POST FB_GT /message]");
 	
 	var horarios = horario.validarHorario_WA();
@@ -813,18 +802,18 @@ app.post('/fb/message', (req, res) => {
 								}							
 
 								var options = {
-									'method': 'POST',
-									'url': config.url_estd,
-									'headers': { 'Content-Type': 'application/json'},
-									body: JSON.stringify(
-									{
+									method : 'post',
+									url : config.url_estd,
+									headers : { 'Content-Type': 'application/json'},
+									data: JSON.stringify({
 										"conversacion_id" : conversationID,
 										"pais" : config.info.pais,
 										"app" : config.info.nomApp,
 										"opcion" : opcion,
+										"rrss" : "FB",
 										"transferencia" : bandera_tranferido,
 										"fueraHorario" : bandera_fueraHorario,
-										"grupoACD" : result_action.queue
+										"grupoACD" : result_action.queue				
 									})
 								};          
 
@@ -833,13 +822,10 @@ app.post('/fb/message', (req, res) => {
 									if(bandera_opt)
 									{
 										console.log(options);
-										request(options, function (error, response)
-										{ 
-											if (error) throw new Error(error);
-											console.log(response.body);
-										});
-									}
-									
+										var resultado_axios = await axios(options);
+										console.log("[Resultado AXIOS] :: ");
+										console.log(resultado_axios);
+									}									
 								}
 								else
 								{
@@ -931,7 +917,7 @@ app.post('/fb/message', (req, res) => {
  	res.status(estatus).json(resultado);
 });
 
-app.post('/tw/message', (req, res) => {
+app.post('/tw/message', async (req, res) => {
 	console.log("[Brito] :: [Peticion POST TW_GT /message]");
 	
 	var horarios = horario.validarHorario_WA();
@@ -1314,18 +1300,18 @@ app.post('/tw/message', (req, res) => {
 								}							
 
 								var options = {
-									'method': 'POST',
-									'url': config.url_estd,
-									'headers': { 'Content-Type': 'application/json'},
-									body: JSON.stringify(
-									{
+									method : 'post',
+									url : config.url_estd,
+									headers : { 'Content-Type': 'application/json'},
+									data: JSON.stringify({
 										"conversacion_id" : conversationID,
 										"pais" : config.info.pais,
 										"app" : config.info.nomApp,
 										"opcion" : opcion,
+										"rrss" : "TW",
 										"transferencia" : bandera_tranferido,
 										"fueraHorario" : bandera_fueraHorario,
-										"grupoACD" : result_action.queue
+										"grupoACD" : result_action.queue				
 									})
 								};          
 
@@ -1334,13 +1320,10 @@ app.post('/tw/message', (req, res) => {
 									if(bandera_opt)
 									{
 										console.log(options);
-										request(options, function (error, response)
-										{ 
-											if (error) throw new Error(error);
-											console.log(response.body);
-										});
-									}
-									
+										var resultado_axios = await axios(options);
+										console.log("[Resultado AXIOS] :: ");
+										console.log(resultado_axios);
+									}									
 								}
 								else
 								{
@@ -1489,11 +1472,6 @@ app.get('/', (req, res) => {
 	var horario_FB = horario.validarHorario_FB();
 	var horario_TW = horario.validarHorario_TW();
 
-	console.log("[Brito] :: [Raiz] :: [Respuesta de horarios_WA] :: " + horario_WA);
-	console.log("[Brito] :: [Raiz] :: [Respuesta de horarios_FB] :: " + horario_FB);
-	console.log("[Brito] :: [Raiz] :: [Respuesta de horarios_TW] :: " + horario_TW);
-
-	// create Date object for current location
 	var now = moment();
 	var fecha_actual = now.tz("America/Guatemala").format("YYYY-MM-DD HH:mm:ss");
 	var anio = now.tz("America/Guatemala").format("YYYY");
