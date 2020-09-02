@@ -28,8 +28,10 @@ var horario_WA = {
 var horario_FB = {
   "OPEN_HOUR" : 8,
   "OPEN_MINUTE" : 0,
-  "CLOSE_HOUR" : 20,
-  "CLOSE_MINUTE" : 0,
+  "CLOSE_HOUR" : 23,
+  "CLOSE_MINUTE" : 59,
+  //"CLOSE_HOUR" : 20,
+  //"CLOSE_MINUTE" : 0,
   dias : {
     "0" : ["domingo",true],
     "1" : ["lunes",true],
@@ -44,8 +46,10 @@ var horario_FB = {
 var horario_TW = {
   "OPEN_HOUR" : 8,
   "OPEN_MINUTE" : 0,
-  "CLOSE_HOUR" : 20,
-  "CLOSE_MINUTE" : 0,
+  "CLOSE_HOUR" : 23,
+  "CLOSE_MINUTE" : 59,
+  //"CLOSE_HOUR" : 20,
+  //"CLOSE_MINUTE" : 0,
   dias : {
     "0" : ["domingo",true],
     "1" : ["lunes",true],
