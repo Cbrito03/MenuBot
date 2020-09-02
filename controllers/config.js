@@ -10,10 +10,10 @@ var url_estd = 'https://estadisticasmenubot.mybluemix.net/opcion/insert';
 var horario_24_7 = true;
 
 var horario_WA = {
-  "OPEN_HOUR" : 7,
+  "OPEN_HOUR" : 0,
   "OPEN_MINUTE" : 0,
-  "CLOSE_HOUR" : 22,
-  "CLOSE_MINUTE" : 50,
+  "CLOSE_HOUR" : 23,
+  "CLOSE_MINUTE" : 59,
   dias : {
     "0" : ["domingo",true],
     "1" : ["lunes",true],
@@ -26,12 +26,14 @@ var horario_WA = {
 };
 
 var horario_FB = {
-  "OPEN_HOUR" : 8,
+  "OPEN_HOUR" : 0,
   "OPEN_MINUTE" : 0,
   "CLOSE_HOUR" : 23,
   "CLOSE_MINUTE" : 59,
-  //"CLOSE_HOUR" : 20,
-  //"CLOSE_MINUTE" : 0,
+ /* "OPEN_HOUR" : 8,
+  "OPEN_MINUTE" : 0,
+  "CLOSE_HOUR" : 20,
+  "CLOSE_MINUTE" : 0,*/
   dias : {
     "0" : ["domingo",true],
     "1" : ["lunes",true],
@@ -44,12 +46,14 @@ var horario_FB = {
 };
 
 var horario_TW = {
-  "OPEN_HOUR" : 8,
+  "OPEN_HOUR" : 0,
   "OPEN_MINUTE" : 0,
   "CLOSE_HOUR" : 23,
   "CLOSE_MINUTE" : 59,
-  //"CLOSE_HOUR" : 20,
-  //"CLOSE_MINUTE" : 0,
+  /*"OPEN_HOUR" : 8,
+  "OPEN_MINUTE" : 0, 
+  "CLOSE_HOUR" : 20,
+  "CLOSE_MINUTE" : 0,*/
   dias : {
     "0" : ["domingo",true],
     "1" : ["lunes",true],
