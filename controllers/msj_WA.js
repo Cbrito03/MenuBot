@@ -5,7 +5,7 @@
   "op_2" : "GT_Wa_Movil"  
 };*/
 
-var colas = {
+/*var colas = {
   "asesor_1_1" : "GT_WA_Ventas_MO",
   "asesor_1_2" : "GT_WA_Ventas_FI",
   "asesor_2" : "GT_Wa_Movil",
@@ -14,6 +14,41 @@ var colas = {
   "precio_asesor" : "GT_Wa_Ventas_MO",
   "factura_asesor" : "GT_Wa_Movil",
   "asistencia_asesor" : "GT_Wa_Movil"  
+};*/
+
+var colas = {
+  "asesor_1_1" : {
+      "timeout" : 900000,
+      "acd" : "GT_WA_Ventas_MO"
+  },
+  "asesor_1_2" : {
+      "timeout" : 900000,
+      "acd" : "GT_WA_Ventas_FI"
+  },
+  "asesor_2" : {
+      "timeout" : 300000,
+      "acd" : "GT_Wa_Movil"
+  },
+  "cotizar_1" : {
+      "timeout" : 900000,
+      "acd" : "GT_WA_Ventas_MO"
+  },
+  "cotizar_2" : {
+      "timeout" : 900000,
+      "acd" : "GT_WA_Ventas_FI"
+  },
+  "precio_asesor" : {
+      "timeout" : 900000,
+      "acd" : "GT_Wa_Ventas_MO"
+  },
+  "factura_asesor" : {
+      "timeout" : 300000,
+      "acd" : "GT_Wa_Movil"
+  },
+  "asistencia_asesor" : {
+      "timeout" : 300000,
+      "acd" : "GT_Wa_Movil"
+  }  
 };
 
 var mensaje_df = "¡Hola! $cr Soy *Avi*, tu asistente virtual 🤖 de Claro $cr ";
@@ -260,43 +295,28 @@ var contenedor = {
 var msj_factura_asesor = {
   "action" : {
     "type" : "transfer",
-    "queue" : colas["factura_asesor"]
+    "queue" : colas["factura_asesor"].acd,
+    "timeoutInactivity" : colas["factura_asesor"].timeout
   },
-  "messages" : [
-    /*{
-      "type" : "text",
-      "text" :  msj_espera,
-      "mediaURL" : ""
-    }*/
-  ]
+  "messages" : []
 };
 
 var msj_asistencia_asesor = {
   "action" : {
     "type" : "transfer",
-    "queue" : colas["asistencia_asesor"]
+    "queue" : colas["asistencia_asesor"].acd,
+    "timeoutInactivity" : colas["asistencia_asesor"].timeout
   },
-  "messages" : [
-    /*{
-      "type" : "text",
-      "text" :  msj_espera,
-      "mediaURL" : ""
-    }*/
-  ]
+  "messages" : []
 };
 
 var msj_precio_asesor = {
   "action" : {
     "type" : "transfer",
-    "queue" : colas["precio_asesor"]
+    "queue" : colas["precio_asesor"].acd,
+    "timeoutInactivity" : colas["precio_asesor"].timeout
   },
-  "messages" : [
-    /*{
-      "type" : "text",
-      "text" :  msj_espera,
-      "mediaURL" : ""
-    }*/
-  ]
+  "messages" : []
 };
 
 var msj_fuera_horario =
@@ -332,15 +352,10 @@ var menu_opciones_asesor =
   "2" : {
     "action" : {
       "type" : "transfer",
-      "queue" : colas["asesor_2"]
+      "queue" : colas["asesor_2"].acd,
+      "timeoutInactivity" : colas["asesor_2"].timeout
     },
-    "messages" : [
-      /*{
-        "type" : "text",
-        "text" :  msj_espera,
-        "mediaURL" : ""
-      }*/
-    ]
+    "messages" : []
   }
 }
 
@@ -349,28 +364,18 @@ var menu_opciones_asesor_op1 =
   "1": {
     "action" : {
       "type" : "transfer",
-      "queue" : colas["asesor_1_1"]
+      "queue" : colas["asesor_1_1"].acd,
+      "timeoutInactivity" : colas["asesor_1_1"].timeout
     },
-    "messages" : [
-      /*{
-        "type" : "text",
-        "text" :  msj_espera,
-        "mediaURL" : ""
-      }*/
-    ]
+    "messages" : []
   },
   "2": {
     "action" : {
       "type" : "transfer",
-      "queue" : colas["asesor_1_2"]
+      "queue" : colas["asesor_1_2"].acd,
+      "timeoutInactivity" : colas["asesor_1_2"].timeout
     },
-    "messages" : [
-      /*{
-        "type" : "text",
-        "text" :  msj_espera,
-        "mediaURL" : ""
-      }*/
-    ]
+    "messages" : []
   }
 }
 
@@ -379,28 +384,18 @@ var menu_opciones_cotizar =
   "1": {
     "action" : {
       "type" : "transfer",
-      "queue" : colas["cotizar_1"]
+      "queue" : colas["cotizar_1"].acd,
+      "timeoutInactivity" : colas["cotizar_1"].timeout
     },
-    "messages" : [
-      /*{
-        "type" : "text",
-        "text" :  msj_espera,
-        "mediaURL" : ""
-      }*/
-    ]
+    "messages" : []
   },
   "2": {
     "action" : {
       "type" : "transfer",
-      "queue" : colas["cotizar_2"]
+      "queue" : colas["cotizar_2"].acd,
+      "timeoutInactivity" : colas["cotizar_2"].timeout
     },
-    "messages" : [
-      /*{
-        "type" : "text",
-        "text" :  msj_espera,
-        "mediaURL" : ""
-      }*/
-    ]
+    "messages" : []
   }
 }
 
@@ -409,14 +404,16 @@ var menu_fueraHorario =
   "llamarme": {
     "action" : {
       "type" : "transfer",
-      "queue" : colas["asesor_1_1"]
+      "queue" : colas["asesor_1_1"].acd,
+      "timeoutInactivity" : colas["asesor_1_1"].timeout
     },
     "messages" : []
   },
   "whatsapp": {
     "action" : {
       "type" : "transfer",
-      "queue" : colas["asesor_1_2"]
+      "queue" : colas["asesor_1_2"].acd,
+      "timeoutInactivity" : colas["asesor_1_2"].timeout
     },
     "messages" : []
   }

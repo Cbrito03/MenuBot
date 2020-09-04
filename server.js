@@ -15,7 +15,6 @@ var horario = require('./controllers/validar_horario.js');
 var moment = require('moment');
 var moment_timezone = require('moment-timezone');
 const axios = require('axios');
-var port = 8080;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -1495,6 +1494,6 @@ app.get('/', (req, res) => {
 	res.status(200).send(respuesta);
 });
 
-http.createServer(app).listen(port, () => {
-  console.log('Server started at http://localhost:' + port);
+http.createServer(app).listen(config.puerto, () => {
+  console.log('Server started at http://localhost:' + config.puerto);
 });
