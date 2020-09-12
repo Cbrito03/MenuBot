@@ -26,7 +26,7 @@ var colas = {
       "acd" : "GT_WA_Ventas_FI"
   },
   "asesor_2" : {
-      "timeout" : 300000,
+      "timeout" : 180000,
       "acd" : "GT_Wa_Movil"
   },
   "cotizar_1" : {
@@ -42,11 +42,11 @@ var colas = {
       "acd" : "GT_Wa_Ventas_MO"
   },
   "factura_asesor" : {
-      "timeout" : 300000,
+      "timeout" : 180000,
       "acd" : "GT_Wa_Movil"
   },
   "asistencia_asesor" : {
-      "timeout" : 300000,
+      "timeout" : 180000,
       "acd" : "GT_Wa_Movil"
   }  
 };
