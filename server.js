@@ -349,11 +349,28 @@ app.post('/wa/message', async (req, res) => {
 							}
 							else if(context.lastInteractionFinishType == "CLIENT_TIMEOUT")
 							{
+								console.log("Entro a CLIENT_TIMEOUT WA");
+
+				                var timeout_acd = "";
+
+				                for (var key in msj_wa.colas)
+				                {
+				                  if(msj_wa.colas[key].acd == context.lastInteractionQueue)
+				                  {
+				                    console.log(msj_wa.colas[key].acd);
+				                    console.log(msj_wa.colas[key].timeout);
+				                    timeout_acd = msj_wa.colas[key].timeout;
+				                    break;
+				                  }
+				  
+				                }
+
 								resultado = {
 									"context": context,
 									"action": {
 										"type" : "transfer",
     									"queue" : context.lastInteractionQueue,
+    									"timeoutInactivity" : timeout_acd
 									},
 									"messages": [],
 									"additionalInfo": {

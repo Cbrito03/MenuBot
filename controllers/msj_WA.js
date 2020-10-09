@@ -1,21 +1,3 @@
-/*var colas = {
-  "op_1" : "GT_Wa_Ventas", // cotizar-1
-  "op_1_1" : "GT_WA_Ventas_MO", // cotizar-2
-  "op_1_2" : "GT_WA_Ventas_FI",
-  "op_2" : "GT_Wa_Movil"  
-};*/
-
-/*var colas = {
-  "asesor_1_1" : "GT_WA_Ventas_MO",
-  "asesor_1_2" : "GT_WA_Ventas_FI",
-  "asesor_2" : "GT_Wa_Movil",
-  "cotizar_1" : "GT_WA_Ventas_MO",
-  "cotizar_2" : "GT_WA_Ventas_FI",
-  "precio_asesor" : "GT_Wa_Ventas_MO",
-  "factura_asesor" : "GT_Wa_Movil",
-  "asistencia_asesor" : "GT_Wa_Movil"  
-};*/
-
 var colas = {
   "asesor_1_1" : {
       "timeout" : 900000,
