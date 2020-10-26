@@ -26,23 +26,23 @@ var colas = {
   }
 };
 
-var mensaje_df = "¡Hola! $cr Soy *Avi*, tu asistente virtual 🤖 de Claro $cr ";
-    mensaje_df +="¡Échale un vistazo a mi nuevo menú de opciones con las que te puedo apoyar más rápido!  Solo envía una de las palabras que aparecen resaltadas según tu consulta. $cr $cr "
-    mensaje_df +="➡️ Envía *cotizar* para conocer nuestros planes móviles y residenciales si deseas renovar o contratar nuevos servicios. 😎 $cr $cr ";
-    mensaje_df +="➡️ Envía *estado* para conocer cómo va tu compra de un servicio nuevo o renovación realizada a través de nuestros asesores de ventas 😎 $cr $cr ";
-    mensaje_df +="➡️ Envía *datos* si te hemos solicitado en nuestro muro que envíes tus datos personales como número de teléfono, caso o nombre para dar seguimiento a tu solicitud. 😎 $cr $cr ";
-    mensaje_df +="➡️ Envía *factura* para conocer tus opciones en consulta de facturas. (Monto y fecha de vencimiento) 📥 $cr $cr ";
-    mensaje_df +="➡️ Envía *ayuda* para conocer todo lo que puedes hacer en un mismo lugar. ¡Puedes consultar tu saldo, tus paquetes contratados, tu consumo de internet móvil y mucho más! 😎 $cr $cr ";
-    mensaje_df +="➡️ Envía *soporte* si presentas inconvenientes con tu internet de casa por lentitud o no navegas, línea fija o Claro TV ☎📺🖥 $cr $cr ";
-    mensaje_df +="➡️ Envía *asistencia* si presentas inconvenientes con tu internet de celular, llamadas o mensajes de texto📱. $cr $cr ";
-    mensaje_df +="➡️ Envía *pagar* para ver el saldo, fecha de vencimiento y pagar tu factura móvil y residencial. 💳 $cr $cr ";
-    mensaje_df +="➡️ Envía *recarga* para hacer una recarga o comprar un paquete. $cr $cr ";
-    mensaje_df +="➡️ Envía *precio* para ver el catálogo de celulares prepago por marca o consultar el estado de tu compra. 📱 $cr $cr ";       
-    mensaje_df +="➡️ Envía *club* para conocer los establecimientos con promociones especiales solo por ser cliente Claro. 😎 💰 $cr $cr ";
-    //mensaje_df +="➡️ Envía *asesor* si aún deseas ser atendido por uno de nuestros agentes de servicio al cliente o ventas. 👩💻👨💻 $cr $cr ";
+var mensaje_df = "¡Hola! \n Soy *Avi*, tu asistente virtual 🤖 de Claro \n ";
+    mensaje_df +="¡Échale un vistazo a mi nuevo menú de opciones con las que te puedo apoyar más rápido!  Solo envía una de las palabras que aparecen resaltadas según tu consulta. \n \n "
+    mensaje_df +="➡️ Envía *cotizar* para conocer nuestros planes móviles y residenciales si deseas renovar o contratar nuevos servicios. 😎 \n \n ";
+    mensaje_df +="➡️ Envía *estado* para conocer cómo va tu compra de un servicio nuevo o renovación realizada a través de nuestros asesores de ventas 😎 \n \n ";
+    mensaje_df +="➡️ Envía *datos* si te hemos solicitado en nuestro muro que envíes tus datos personales como número de teléfono, caso o nombre para dar seguimiento a tu solicitud. 😎 \n \n ";
+    mensaje_df +="➡️ Envía *factura* para conocer tus opciones en consulta de facturas. (Monto y fecha de vencimiento) 📥 \n \n ";
+    mensaje_df +="➡️ Envía *ayuda* para conocer todo lo que puedes hacer en un mismo lugar. ¡Puedes consultar tu saldo, tus paquetes contratados, tu consumo de internet móvil y mucho más! 😎 \n \n ";
+    mensaje_df +="➡️ Envía *soporte* si presentas inconvenientes con tu internet de casa por lentitud o no navegas, línea fija o Claro TV ☎📺🖥 \n \n ";
+    mensaje_df +="➡️ Envía *asistencia* si presentas inconvenientes con tu internet de celular, llamadas o mensajes de texto📱. \n \n ";
+    mensaje_df +="➡️ Envía *pagar* para ver el saldo, fecha de vencimiento y pagar tu factura móvil y residencial. 💳 \n \n ";
+    mensaje_df +="➡️ Envía *recarga* para hacer una recarga o comprar un paquete. \n \n ";
+    mensaje_df +="➡️ Envía *precio* para ver el catálogo de celulares prepago por marca o consultar el estado de tu compra. 📱 \n \n ";       
+    mensaje_df +="➡️ Envía *club* para conocer los establecimientos con promociones especiales solo por ser cliente Claro. 😎 💰 \n \n ";
+    //mensaje_df +="➡️ Envía *asesor* si aún deseas ser atendido por uno de nuestros agentes de servicio al cliente o ventas. 👩💻👨💻 \n \n ";
 
 var mjs_horario = "¡Hola! Te saluda AVI 🤖 tu Asistente Virtual de Claro quiero comentarte que nuestros horarios ";
-    mjs_horario += "de atención son de lunes a domingo de 08:00 am a 08:00 pm. $cr $cr";
+    mjs_horario += "de atención son de lunes a domingo de 08:00 am a 08:00 pm. \n \n";
     mjs_horario += 'Con gusto te estaremos atendiendo mañana para ayudarte con tu solicitud, si quieres que uno de ';
     mjs_horario += 'nuestros asesores se comunique contigo por llamada coloca *“Llamarme”* o si prefieres que te sigamos atendiendo ';
     mjs_horario += 'por este medio coloca *“Whatsapp”*';
@@ -52,56 +52,56 @@ var msj_espera = "En este momento nuestros agentes están ocupados, te atenderem
 var messaje_def_opdos = "Pedimos tu comprensión por los tiempos de espera. Puedes utilizar, sin costo alguno, nuestros canales digitales de autogestión: Mi Pago Claro (https://gt.mipagoclaro.com/), ";
     messaje_def_opdos += "Mi Claro Express (https://paquetes.miclaro.com.gt/) Menú Digital (http://bit.ly/ClaroMenuDigital) y consultas de saldos de facturas enviando tu número de teléfono por mensaje de texto a la marcación 147100. ¡Claro que sí!";
 
-var msj_datos = "👋 Te damos la bienvenida a la GigaRed Claro, nuestro compromiso es mantenerte conectado.😊 $cr $cr ";
-    msj_datos += "Ingresa el número de la opción con la que necesitas apoyo: $cr $cr ";
-    msj_datos += "1. Adquirir un plan nuevo, información de promociones o renovar mi servicio $cr ";
-    msj_datos += "2. Gestiones y soporte de mis servicios actuales $cr ";
+var msj_datos = "👋 Te damos la bienvenida a la GigaRed Claro, nuestro compromiso es mantenerte conectado.😊 \n \n ";
+    msj_datos += "Ingresa el número de la opción con la que necesitas apoyo: \n \n ";
+    msj_datos += "1. Adquirir un plan nuevo, información de promociones o renovar mi servicio \n ";
+    msj_datos += "2. Gestiones y soporte de mis servicios actuales \n ";
 
-var msj_cotizar = "*¡Hola!🤗 Bienvenido a nuestro servicio de ventas Claro.* Recuerda que esta opción es exclusiva para conocer el estado de tu compra y/o renovaciones. $cr $cr ";
-    msj_cotizar += "Por favor ingresa el número de la opción con la que necesitas apoyo: $cr $cr ";
-    msj_cotizar += "1. Servicios Móviles $cr ";
-    msj_cotizar += "2. Servicios Fijos $cr ";
+var msj_cotizar = "*¡Hola!🤗 Bienvenido a nuestro servicio de ventas Claro.* Recuerda que esta opción es exclusiva para conocer el estado de tu compra y/o renovaciones. \n \n ";
+    msj_cotizar += "Por favor ingresa el número de la opción con la que necesitas apoyo: \n \n ";
+    msj_cotizar += "1. Servicios Móviles \n ";
+    msj_cotizar += "2. Servicios Fijos \n ";
 
-var msj_estado = "*¡Hola!🤗 Bienvenido a nuestro servicio de ventas Claro.* Recuerda que esta opción es exclusiva para conocer el estado de tu compra y/o renovaciones. $cr $cr ";
-    msj_estado += "Por favor ingresa el número de la opción con la que necesitas apoyo: $cr $cr ";
-    msj_estado += "1. Servicios Móviles $cr ";
-    msj_estado += "2. Servicios Fijos $cr ";
+var msj_estado = "*¡Hola!🤗 Bienvenido a nuestro servicio de ventas Claro.* Recuerda que esta opción es exclusiva para conocer el estado de tu compra y/o renovaciones. \n \n ";
+    msj_estado += "Por favor ingresa el número de la opción con la que necesitas apoyo: \n \n ";
+    msj_estado += "1. Servicios Móviles \n ";
+    msj_estado += "2. Servicios Fijos \n ";
 
-var msj_facturar = "Puedes descargar tu factura móvil ingresando al siguiente portal: http://bit.ly/MiClaroFactura $cr $cr";
-    msj_facturar += "Puedes pagar fácil y rápido aquí: gt.mipagoclaro.com 💳🧾 $cr $cr";
+var msj_facturar = "Puedes descargar tu factura móvil ingresando al siguiente portal: http://bit.ly/MiClaroFactura \n \n";
+    msj_facturar += "Puedes pagar fácil y rápido aquí: gt.mipagoclaro.com 💳🧾 \n \n";
     msj_facturar += "Si tienes consultas sobre algún detalle específico en tu factura, envía *asesor* 👩💻👨💻";
 
-var msj_ayuda = "¡Consulta tu consumo de datos, tu saldo, tus paquetes contratados y mucho más! desde nuestra App renovada para ti. $cr ";
-    msj_ayuda += "Descarga la App 👉🏼 http://onelink.to/claroappgt $cr ";
-    msj_ayuda += "¿Cómo me registro? $cr ";
-    msj_ayuda += "👉🏼 https://bit.ly/registro-android $cr ";
-    msj_ayuda += "👉🏼 https://bit.ly/registro-apple $cr ";
-    msj_ayuda += "¿Cómo asocio mis números? $cr ";
-    msj_ayuda += "👉🏼 https://bit.ly/asociar-números $cr ";
+var msj_ayuda = "¡Consulta tu consumo de datos, tu saldo, tus paquetes contratados y mucho más! desde nuestra App renovada para ti. \n ";
+    msj_ayuda += "Descarga la App 👉🏼 http://onelink.to/claroappgt \n ";
+    msj_ayuda += "¿Cómo me registro? \n ";
+    msj_ayuda += "👉🏼 https://bit.ly/registro-android \n ";
+    msj_ayuda += "👉🏼 https://bit.ly/registro-apple \n ";
+    msj_ayuda += "¿Cómo asocio mis números? \n ";
+    msj_ayuda += "👉🏼 https://bit.ly/asociar-números \n ";
 
-var msj_precio = "Conoce nuestros equipos disponibles 📥📁📱 ingresando aquí $cr ";
-    msj_precio += "https://tiendaenlinea.claro.com.gt/ $cr";
+var msj_precio = "Conoce nuestros equipos disponibles 📥📁📱 ingresando aquí \n ";
+    msj_precio += "https://tiendaenlinea.claro.com.gt/ \n";
     msj_precio += "O envía asesor 👩💻👨💻 si deseas consulta el seguimiento de tu compra ya realizada. ";
 
-var msj_club = "Si eres Claro 😉 eres parte del club con beneficios y descuentos.$cr "; 
-    msj_club += "¡Descarga la App! 👇 $cr";
-    msj_club += "Android: http://bit.ly/ClaroClub-Android $cr";
+var msj_club = "Si eres Claro 😉 eres parte del club con beneficios y descuentos.\n "; 
+    msj_club += "¡Descarga la App! 👇 \n";
+    msj_club += "Android: http://bit.ly/ClaroClub-Android \n";
     msj_club += "iOS: http://bit.ly/ClaroClubiOS ";
 
-var msj_asesor = "👋 Te damos la bienvenida a la GigaRed Claro, nuestro compromiso es mantenerte conectado.😊 $cr $cr ";
-    msj_asesor += "Ingresa el número de la opción con la que necesitas apoyo: $cr $cr ";
-    msj_asesor += "1. Adquirir un plan nuevo, información de promociones o renovar mi servicio $cr ";
-    msj_asesor += "2. Gestiones y soporte de mis servicios actuales $cr ";
+var msj_asesor = "👋 Te damos la bienvenida a la GigaRed Claro, nuestro compromiso es mantenerte conectado.😊 \n \n ";
+    msj_asesor += "Ingresa el número de la opción con la que necesitas apoyo: \n \n ";
+    msj_asesor += "1. Adquirir un plan nuevo, información de promociones o renovar mi servicio \n ";
+    msj_asesor += "2. Gestiones y soporte de mis servicios actuales \n ";
 
-var msj_op1_asesor = "*¡Hola!🤗 Bienvenido a nuestro servicio de ventas Claro.* Recuerda que esta opción es exclusiva para conocer el estado de tu compra y/o renovaciones. $cr $cr ";
-    msj_op1_asesor += "Por favor ingresa el número de la opción con la que necesitas apoyo: $cr $cr ";
-    msj_op1_asesor += "1. Servicios Móviles $cr ";
-    msj_op1_asesor += "2. Servicios Fijos $cr ";
+var msj_op1_asesor = "*¡Hola!🤗 Bienvenido a nuestro servicio de ventas Claro.* Recuerda que esta opción es exclusiva para conocer el estado de tu compra y/o renovaciones. \n \n ";
+    msj_op1_asesor += "Por favor ingresa el número de la opción con la que necesitas apoyo: \n \n ";
+    msj_op1_asesor += "1. Servicios Móviles \n ";
+    msj_op1_asesor += "2. Servicios Fijos \n ";
 
-var msj_op1_datos = "*¡Hola!🤗 Bienvenido a nuestro servicio de ventas Claro.* Recuerda que esta opción es exclusiva para conocer el estado de tu compra y/o renovaciones. $cr $cr ";
-    msj_op1_datos += "Por favor ingresa el número de la opción con la que necesitas apoyo: $cr $cr ";
-    msj_op1_datos += "1. Servicios Móviles $cr ";
-    msj_op1_datos += "2. Servicios Fijos $cr ";
+var msj_op1_datos = "*¡Hola!🤗 Bienvenido a nuestro servicio de ventas Claro.* Recuerda que esta opción es exclusiva para conocer el estado de tu compra y/o renovaciones. \n \n ";
+    msj_op1_datos += "Por favor ingresa el número de la opción con la que necesitas apoyo: \n \n ";
+    msj_op1_datos += "1. Servicios Móviles \n ";
+    msj_op1_datos += "2. Servicios Fijos \n ";
 
 var palabras = {
   "cotizar": {
@@ -190,7 +190,7 @@ var palabras = {
     "messages" : [
       {
         "type" : "text",
-        "text" :  "Sigue los pasos detallados en la imagen,  https://bit.ly/configuracion_movil $cr $cr Si el inconveniente persiste, envía asesor 👩💻👨💻",
+        "text" :  "Sigue los pasos detallados en la imagen,  https://bit.ly/configuracion_movil \n \n Si el inconveniente persiste, envía asesor 👩💻👨💻",
         "mediaURL" : ""
       }
     ]
