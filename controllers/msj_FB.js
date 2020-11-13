@@ -4,7 +4,7 @@ var colas = {
     "1_1" : "GT_FB_MSS_VENTAS",
     "1_2" : "GT_FB_MSS_SAC",
     "2" : "GT_FB_MSS_SAC",
-    "precio" : "GT_FB_MSS_SAC" //"GT_FB_MSS_Ventas_MO",
+    "precio" : "GT_FB_MSS_SAC", //"GT_FB_MSS_Ventas_MO",
     "factura" : "GT_FB_MSS_SAC",
     "asistencia" : "GT_FB_MSS_SAC"
   },
