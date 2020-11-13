@@ -4,7 +4,7 @@ var colas = {
     "1_1" : "GT_FB_MSS_VENTAS",
     "1_2" : "GT_FB_MSS_SAC",
     "2" : "GT_FB_MSS_SAC",
-    "precio" : "GT_FB_MSS_Ventas_MO",
+    "precio" : "GT_FB_MSS_SAC" //"GT_FB_MSS_Ventas_MO",
     "factura" : "GT_FB_MSS_SAC",
     "asistencia" : "GT_FB_MSS_SAC"
   },
@@ -81,7 +81,7 @@ var msj_ayuda = "¡Consulta tu consumo de datos, tu saldo, tus paquetes contrata
 
 var msj_precio = "Conoce nuestros equipos disponibles 📥📁📱 ingresando aquí \n ";
     msj_precio += "https://tiendaenlinea.claro.com.gt/ \n";
-    msj_precio += "O envía asesor 👩💻👨💻 si deseas consulta el seguimiento de tu compra ya realizada. ";
+    msj_precio += "O envía asesor 👩💻👨💻 si deseas consultar el seguimiento de tu compra ya realizada. ";
 
 var msj_club = "Si eres Claro 😉 eres parte del club con beneficios y descuentos.\n "; 
     msj_club += "¡Descarga la App! 👇 \n";
@@ -323,7 +323,7 @@ var msj_asistencia_asesor = {
 var msj_precio_asesor = {
   "action" : {
     "type" : "transfer",
-    "queue" : colas.asesor["precio"] // GT_FB_MSS_Ventas_MO
+    "queue" : colas.asesor["precio"] // GT_FB_MSS_Ventas_MO TO GT_FB_MSS_SAC
   },
   "messages" : [
     /*{

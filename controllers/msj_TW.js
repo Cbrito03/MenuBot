@@ -81,7 +81,7 @@ var msj_ayuda = "¡Consulta tu consumo de datos, tu saldo, tus paquetes contrata
 
 var msj_precio = "Conoce nuestros equipos disponibles 📥📁📱 ingresando aquí \n ";
     msj_precio += "https://tiendaenlinea.claro.com.gt/ \n";
-    msj_precio += "O envía asesor 👩💻👨💻 si deseas consulta el seguimiento de tu compra ya realizada. ";
+    msj_precio += "O envía asesor 👩💻👨💻 si deseas consultar el seguimiento de tu compra ya realizada. ";
 
 var msj_club = "Si eres Claro 😉 eres parte del club con beneficios y descuentos.\n "; 
     msj_club += "¡Descarga la App! 👇 \n";

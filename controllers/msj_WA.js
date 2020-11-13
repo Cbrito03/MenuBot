@@ -20,8 +20,8 @@ var colas = {
       "acd" : "GT_WA_Ventas_FI"
   },
   "precio_asesor" : {
-      "timeout" : 900000,
-      "acd" : "GT_Wa_Ventas_MO"
+      "timeout" : 180000, // "timeout" : 900000,
+      "acd" : "GT_Wa_Movil" // "acd" : "GT_Wa_Ventas_MO"
   },
   "factura_asesor" : {
       "timeout" : 180000,
@@ -87,7 +87,7 @@ var msj_ayuda = "¡Consulta tu consumo de datos, tu saldo, tus paquetes contrata
 
 var msj_precio = "Conoce nuestros equipos disponibles 📥📁📱 ingresando aquí \n ";
     msj_precio += "https://tiendaenlinea.claro.com.gt/ \n";
-    msj_precio += "O envía *asesor* 👩💻👨💻 si deseas consulta el seguimiento de tu compra ya realizada o consultar el estado de tu compra.";
+    msj_precio += "O envía *asesor* 👩💻👨💻 si deseas consultar el seguimiento de tu compra ya realizada o consultar el estado de tu compra.";
 
 var msj_club = "Si eres Claro 😉 eres parte del club con beneficios y descuentos.\n "; 
     msj_club += "¡Descarga la App! 👇 \n";
