@@ -177,7 +177,7 @@ var palabras = {
     "messages" : [
       {
         "type" : "text",
-        "text" :  "Da click acá y te apoyaremos de inmediato con soporte técnico para cualquiera de tus servicios fijos https://bit.ly/soporte-técnico-Claro",
+        "text" :  "Da click acá y te apoyaremos de inmediato con soporte técnico para cualquiera de tus servicios fijos https://bit.ly/Soporte-Residencial",
         "mediaURL" : ""
       }
     ]
