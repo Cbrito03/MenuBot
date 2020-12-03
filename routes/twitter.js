@@ -479,8 +479,7 @@ router.post('/tw/message', async (req, res) => {
                 }
               }
 
-              console.log("[Brito] :: [RESULTADO] :: [resultado] :: ");
-              console.log(resultado);
+              console.log("[Brito] :: [RESULTADO] :: [resultado GT TW] :: ", resultado);
               console.log("[Brito] :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: [Brito]");
             }
             else

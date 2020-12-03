@@ -386,8 +386,7 @@ router.post('/wa/message', async (req, res) => {
                 }
               }
 
-              console.log("[Brito] :: [RESULTADO] :: [resultado] :: ");
-              console.log(resultado);
+              console.log("[Brito] :: [RESULTADO] :: [resultado GT WA] :: ", resultado);
               console.log("[Brito] :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: [Brito]");
             }
             else
