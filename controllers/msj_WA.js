@@ -33,19 +33,7 @@ var colas = {
   }  
 };
 
-var mensaje_df = "¡Hola! \n Soy *Avi*, tu asistente virtual 🤖 de Claro \n ";
-    mensaje_df +="¡Échale un vistazo a mi nuevo menú de opciones con las que te puedo apoyar más rápido!  Solo envía una de las palabras que aparecen resaltadas según tu consulta. \n \n "
-    mensaje_df +="➡️ Envía *cotizar* para conocer nuestros planes móviles y residenciales si deseas renovar o contratar nuevos servicios. 😎 \n \n ";
-    mensaje_df +="➡️ Envía *factura* para conocer el detalle de tu factura, monto y fecha de vencimiento. 📥 \n \n ";
-    mensaje_df +="➡️ Envía *ayuda* para conocer todo lo que puedes hacer en un mismo lugar. ¡Puedes consultar tu saldo, tus paquetes contratados, tu consumo de internet móvil y mucho más! 😎 \n \n ";
-    mensaje_df +="➡️ Envía *soporte* si presentas inconvenientes con tu internet de casa por lentitud o no navegas, línea fija o Claro TV ☎📺🖥 \n \n ";
-    mensaje_df +="➡️ Envía *asistencia* si presentas inconvenientes con tu internet de celular, llamadas o mensajes de texto📱. \n \n ";
-    mensaje_df +="➡️ Envía *pagar* para ver el saldo, fecha de vencimiento y pagar tu factura móvil y residencial. 💳 \n \n ";
-    mensaje_df +="➡️ Envía *recarga* para hacer una recarga. \n \n ";
-    mensaje_df +="➡️ Envía *paquete* para compra de paquete. \n \n ";
-    mensaje_df +="➡️ Envía *precio* para ver el catálogo de celulares prepago por marca 📱 \n \n ";       
-    mensaje_df +="➡️ Envía *club* para conocer los establecimientos con promociones especiales solo por ser cliente Claro. 😎 💰 \n \n ";
-    //mensaje_df +="➡️ Envía *asesor* si aún deseas ser atendido por uno de nuestros agentes de servicio al cliente o ventas. 👩💻👨💻 \n \n ";
+var mensaje_df = "Nuestro número de WhatsApp ha cambiado, ahora puedes contactarnos ingresando aquí 👉 https://bit.ly/WhatsappGTClaro . ¡Claro que sí!";
 
 var mjs_horario = "¡Hola! Te saluda AVI 🤖 tu Asistente Virtual de Claro quiero comentarte que nuestros horarios ";
     mjs_horario += "de atención son de lunes a domingo de 08:00 am a 08:00 pm. \n \n";
@@ -102,7 +90,7 @@ var msj_asesor = "👋 Te damos la bienvenida a la GigaRed Claro, nuestro compro
 var msj_default = 
 {
   "action" : {
-    "type" : "continue",
+    "type" : "end",
     "queue" : ""
   },
   "messages" : [
