@@ -19,7 +19,7 @@
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "localStorage": "^1.0.4",
-    "moment": "^2.27.0",
+    "moment": "^2.29.4",
     "moment-timezone": "^0.5.31",
     "node-localstorage": "^2.1.5",
     "request": "^2.88.2"
